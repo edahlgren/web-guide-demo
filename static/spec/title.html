@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>/</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="nav-wrapper">
+        <div class="nav">
+          
+          <div class="nav-home">
+            <a href="/index.html">
+              Home
+            </a>
+          </div>
+        
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/command/run.html">
+                  <div class="nav-title">run</div>
+                  <div class="nav-description">Run the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/build.html">
+                  <div class="nav-title">build</div>
+                  <div class="nav-description">Rebuild the source code</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/docs.html">
+                  <div class="nav-title">docs</div>
+                  <div class="nav-description">Find and generate documentation</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/share.html">
+                  <div class="nav-title">share</div>
+                  <div class="nav-description">Rsync from the demo to localhost</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/sync.html">
+                  <div class="nav-title">sync</div>
+                  <div class="nav-description">Rsync from localhost to the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/configure.html">
+                  <div class="nav-title">configure</div>
+                  <div class="nav-description">Configure the demo</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+          <h6>Configure</h6>
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/spec/title.html">
+                  <span class="nav-title">title</span> <span class="nav-description">Demo title</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/run.html">
+                  <span class="nav-title">run</span> <span class="nav-description">Run scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/io.html">
+                  <span class="nav-title">io</span> <span class="nav-description">Input and output files</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/args.html">
+                  <span class="nav-title">args</span> <span class="nav-description">Command line arguments</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/build.html">
+                  <span class="nav-title">build</span> <span class="nav-description">Build scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/data.html">
+                  <span class="nav-title">data</span> <span class="nav-description">Included data sets</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/source.html">
+                  <span class="nav-title">source</span> <span class="nav-description">Source code</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/papers.html">
+                  <span class="nav-title">papers</span> <span class="nav-description">Research papers and reports</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          -->
+        </div>
+        
+      </div>
+      <!-- end nav -->
+
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="page">
+            <div class="guide"><h1>title</h1>
+<p>Demo title</p>
+<h2>Quick reference</h2>
+<p>View the configuration</p>
+<pre><code>$ cat /demo/demo.yml 
+</code></pre>
+<p>Check this section</p>
+<pre><code>$ demo configure title --check
+</code></pre>
+<h2>Summary</h2>
+<p>The title section contains a short description of the demo, which will appear at the top of its generated documentation</p>
+<h2>Requirements</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>title: </pre></td><td>Title of the demo</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<pre><code>title: Nuclear planetary destruction
+</code></pre>
+<h2>Best practices</h2>
+<ul>
+<li>Keep your title short (3-6 words)</li>
+<li>Include words that highlight what's unusual about your demo</li>
+</ul>
+</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

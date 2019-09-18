@@ -1,0 +1,86 @@
+<div class="guide"><h1>data</h1>
+<p>Included data sets</p>
+<h2>Quick reference</h2>
+<p>View the configuration</p>
+<pre><code>$ cat /demo/demo.yml 
+</code></pre>
+<p>Check this section</p>
+<pre><code>$ demo configure data --check
+</code></pre>
+<h2>Summary</h2>
+<p>The data section contains information about included data sets that are compatible with the demo, for executing a number of experiments.</p>
+<h2>Requirements</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>data:</pre></td><td>Included data sets for experimenting</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  - title: </pre></td><td>Title or short description of the dataset</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    description: </pre></td><td>Longer description of the data</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    source: </pre></td><td>Where the dataset comes from (e.g. an institution, a website)</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    url: </pre></td><td>Where the dataset can be found online</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Must be an http or https url path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    files:</pre></td><td>Files from the dataset in the demo</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      - description: </pre></td><td>Description of the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        path: </pre></td><td>Path to the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be an absolute file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        metadata:</pre></td><td>Facts about the file</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>          - description: </pre></td><td>Description of the statistic</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>            data: </pre></td><td>The statistic</td></tr>
+<tr><td></td><td><ul><li>Must be a number</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<pre><code>data:
+  - title: Planetary Locations Dataset
+    description: &gt;-
+      CSV formatted files containing the coordinates of planets in Earth's
+      solar system
+    source: Institute for Evil Research
+    url: &quot;http://www.ier.org/datasets/planets.html&quot;
+    
+    files:
+      - description: CSV file containing the coordinates of Mars
+        path: /root/data/mars/coordinates.csv
+        metadata:
+          - description: Average distance from Earth (million miles)
+            data: 140
+          - description: Planetary order relative to the Sun
+            data: 4
+            
+      - description: CSV file containing the coordinates of Jupiter
+        path: /root/data/jupiter/coordinates.csv
+        metadata:
+          - description: Average distance from Earth (million miles)
+            data: 483
+          - description: Planetary order relative to the Sun
+            data: 5
+</code></pre>
+<h2>Best practices</h2>
+<ul>
+<li>Include 2-3 metadata statistics about each file to show differences</li>
+<li>Include the file format in the file description</li>
+<li>Use URLs from the source's website</li>
+</ul>
+</div>

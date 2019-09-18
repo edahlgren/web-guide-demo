@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>/</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="nav-wrapper">
+        <div class="nav">
+          
+          <div class="nav-home">
+            <a href="/index.html">
+              Home
+            </a>
+          </div>
+        
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/command/run.html">
+                  <div class="nav-title">run</div>
+                  <div class="nav-description">Run the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/build.html">
+                  <div class="nav-title">build</div>
+                  <div class="nav-description">Rebuild the source code</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/docs.html">
+                  <div class="nav-title">docs</div>
+                  <div class="nav-description">Find and generate documentation</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/share.html">
+                  <div class="nav-title">share</div>
+                  <div class="nav-description">Rsync from the demo to localhost</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/sync.html">
+                  <div class="nav-title">sync</div>
+                  <div class="nav-description">Rsync from localhost to the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/configure.html">
+                  <div class="nav-title">configure</div>
+                  <div class="nav-description">Configure the demo</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+          <h6>Configure</h6>
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/spec/title.html">
+                  <span class="nav-title">title</span> <span class="nav-description">Demo title</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/run.html">
+                  <span class="nav-title">run</span> <span class="nav-description">Run scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/io.html">
+                  <span class="nav-title">io</span> <span class="nav-description">Input and output files</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/args.html">
+                  <span class="nav-title">args</span> <span class="nav-description">Command line arguments</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/build.html">
+                  <span class="nav-title">build</span> <span class="nav-description">Build scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/data.html">
+                  <span class="nav-title">data</span> <span class="nav-description">Included data sets</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/source.html">
+                  <span class="nav-title">source</span> <span class="nav-description">Source code</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/papers.html">
+                  <span class="nav-title">papers</span> <span class="nav-description">Research papers and reports</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          -->
+        </div>
+        
+      </div>
+      <!-- end nav -->
+
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="page">
+            <div class="guide"><h1>source</h1>
+<p>Source code</p>
+<h2>Quick reference</h2>
+<p>View the configuration</p>
+<pre><code>$ cat /demo/demo.yml 
+</code></pre>
+<p>Check this section</p>
+<pre><code>$ demo configure source --check
+</code></pre>
+<h2>Summary</h2>
+<p>The source section contains information about the source code of the demo so someone can read the implementation of the demo and modify it.</p>
+<h2>Requirements</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>source:</pre></td><td>Source code of the demo</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  - name: </pre></td><td>Name of the repository</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    description: </pre></td><td>Description of the repository</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    version: </pre></td><td>Version number of the project, if defined</td></tr>
+<tr><td></td><td><ul><li>Must be a number</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    directory: </pre></td><td>Path to the repository</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be an absolute file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    entrypoint: </pre></td><td>Name of the file that contains the entrypoint, if the repository is not a library with entrypoints in many files</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Must be a relative file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    license: </pre></td><td>Path to a file containing the source code license</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be an absolute file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    authors:</pre></td><td>List of the original authors of the source code (limit 10)</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      - </pre></td><td>An author</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    notable:</pre></td><td>Notable files</td></tr>
+<tr><td></td><td><ul><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      documentation:</pre></td><td>Notable documentation files</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        - description: </pre></td><td>Description of the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>          path: </pre></td><td>Path to the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be a relative file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      source:</pre></td><td>Notable source files</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        - description: </pre></td><td>Description of the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>          path: </pre></td><td>Path to the file</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be a relative file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      build:</pre></td><td>Notable build files and artifacts</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        - description: </pre></td><td>Description of the file or artifact</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>          path: </pre></td><td>Path to the file or artifact</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be a relative file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<pre><code>source:
+  - name: nukeit
+    description: &gt;-
+      Implements a remote controlled nuclear missile launcher that is able
+      to fire nuclear missiles at planets that are millions of miles away
+    version: 1.0
+      
+    directory: /root/src/nukeit
+    entrypoint: main.c
+      
+    license: /root/src/nukeit/GPLv2.txt
+    authors:
+      - Ronald Regan
+      - John Kennedy
+      
+    notable:
+      documentation:
+        - description: Contains instructions for running
+          path: README.md
+          
+      source:
+        - description: Parses commandline arguments
+          path: parse.c
+          
+        - description: Initializes the launcher
+          path: init.c
+        
+        - description: Implements the remote controller
+          path: main.c
+          
+      build:
+        - description: Contains commands for building a nuke binary
+          path: Makefile
+          
+        - description: The nuke binary, the output of a successful build
+          path: nuke
+</code></pre>
+<h2>Best practices</h2>
+<ul>
+<li>&quot;Use a commit hash as the version, if available&quot;</li>
+<li>&quot;Include a file containing the license instead of a license name&quot;</li>
+<li>&quot;Include at least 2-3 notable source files&quot;</li>
+<li>&quot;Include at least 1 file or script used to build the source code&quot;</li>
+</ul>
+</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

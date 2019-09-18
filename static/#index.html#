@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>/</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="nav-wrapper">
+        <div class="nav">
+          
+          <div class="nav-home">
+            <a href="/index.html">
+              Home
+            </a>
+          </div>
+        
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/command/run.html">
+                  <div class="nav-title">run</div>
+                  <div class="nav-description">Run the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/build.html">
+                  <div class="nav-title">build</div>
+                  <div class="nav-description">Rebuild the source code</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/docs.html">
+                  <div class="nav-title">docs</div>
+                  <div class="nav-description">Find and generate documentation</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/share.html">
+                  <div class="nav-title">share</div>
+                  <div class="nav-description">Rsync from the demo to localhost</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/sync.html">
+                  <div class="nav-title">sync</div>
+                  <div class="nav-description">Rsync from localhost to the demo</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/command/configure.html">
+                  <div class="nav-title">configure</div>
+                  <div class="nav-description">Configure the demo</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+          <h6>Configure</h6>
+          <div class="nav-section">
+            <ul>
+              <li class="nav-item">
+                <a href="/spec/title.html">
+                  <span class="nav-title">title</span> <span class="nav-description">Demo title</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/run.html">
+                  <span class="nav-title">run</span> <span class="nav-description">Run scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/io.html">
+                  <span class="nav-title">io</span> <span class="nav-description">Input and output files</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/args.html">
+                  <span class="nav-title">args</span> <span class="nav-description">Command line arguments</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/build.html">
+                  <span class="nav-title">build</span> <span class="nav-description">Build scripts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/data.html">
+                  <span class="nav-title">data</span> <span class="nav-description">Included data sets</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/source.html">
+                  <span class="nav-title">source</span> <span class="nav-description">Source code</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/spec/papers.html">
+                  <span class="nav-title">papers</span> <span class="nav-description">Research papers and reports</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          -->
+        </div>
+        
+      </div>
+      <!-- end nav -->
+
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="page">
+            <div class="doc">
+
+  <!-- The title of the demo -->
+  <h1>Ant Colony Search</h1>
+  
+  <!-- Layout of the demo -->
+  <div class="section">
+    <h2 class="section-title">Layout</h2>
+
+    <table class="section-content">
+      <tbody class="last-p4">
+        <tr>
+          <td class="inline-code bold">/shared</td>
+          <td class="text">Can be synchronized with a local directory</td>
+        </tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="inline-code bold">/demo/setup</td>
+          <td class="text">Scripts used to setup the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code bold">/demo/run</td>
+          <td class="text">Scripts for running the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code bold">/demo/build</td>
+          <td class="text">Scripts for building the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code bold">/demo/docs</td>
+          <td class="text">Generated docs</td>
+        </tr>
+        <tr>
+          <td class="inline-code bold">/demo/demo.yml</td>
+          <td class="text">Configuration file that fully describes the demo</td>
+        </tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="inline-code bold">/root/src</td>
+          <td class="text">Source code</td>
+        </tr>
+        <tr>
+          <td class="inline-code bold">/root/data</td>
+          <td class="text">Data sets</td>
+        </tr>
+      </tbody>
+    </table> <!-- end of section content -->
+  </div> <!-- end of section -->
+  
+  <!-- Commands of the demo -->
+  <div class="section">
+
+    <h2 class="section-title">Commands</h2>
+    <div class="section-content flex">
+      
+      <!-- List of commands the user can run
+           _outside_ the demo -->
+      <div class="column">
+        <div class="list-header">
+          Run outside
+        </div>
+        <ul>
+          <li>
+            <a href="/command/shell.html">
+              <div class="inline-code bold">shell</div>
+              <div class="text">Enter the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/browse.html">
+              <div class="inline-code bold">browse</div>
+              <div class="text">Explore the demo in a web browser</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/down.html">
+              <div class="inline-code bold">down</div>
+              <div class="text">Shutdown the demo</div>
+            </a>
+          </li>
+        </ul>
+      </div> <!-- end of column -->
+
+      <!-- List of commands the user can run
+           _inside_ the demo -->
+      <div class="column">
+        <div class="list-header">
+          Run inside
+        </div>
+        <ul>
+          <li>
+            <a href="/command/run.html">
+              <div class="inline-code bold">run</div>
+              <div class="text">Run the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/build.html">
+              <div class="inline-code bold">build</div>
+              <div class="text">Rebuild the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/share.html">
+              <div class="inline-code bold">share</div>
+              <div class="text">Rsync files from the demo to localhost</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/sync.html">
+              <div class="inline-code bold">sync</div>
+              <div class="text">Rsync files from localhost to the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/docs.html">
+              <div class="inline-code bold">docs</div>
+              <div class="text">Find and regenerate docs</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/configure.html">
+              <div class="inline-code bold">configure</div>
+              <div class="text">Reconfigure the demo</div>
+            </a>
+          </li>
+        </ul>
+      </div> <!-- end of column -->
+    </div> <!-- end of section content -->
+  </div> <!-- end of section -->
+  
+  <!-- Quick start -->
+  <div class="section">
+    <h2 class="section-title">Quick start</h2>
+
+    <!-- Show how to enter and run the demo -->
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="text em">Enter the demo</td>
+          <td class="block-code">
+
+<pre><code>$ demo shell dm/ant-colony-search
+root@ant-colony-search:#                
+</code></pre>
+
+          </td>
+        </tr>
+        <tr>
+          <td class="text em">Run the demo</td>
+          <td class="block-code">
+            
+<pre><code>root@ant-colony-search:# demo run
+</code></pre>
+
+          </td>
+        </tr>
+      </tbody>
+    </table> <!-- end of section content -->
+  </div> <!-- end of section -->
+    
+  <!-- Experimenting -->
+  <div class="section">
+    <h2 class="section-title">Experimenting</h2>
+
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="text em">First</td>
+          <td class="text">
+            Get familiar with the <a href="">demo shell</a>, a terminal environment that you'll use to interact with the demo
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="text em">Then</td>
+          <td class="text">
+            Try each of the <a href="/command/run.html#configured">preconfigured runs</a> to see a broader range of what the demo can do
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="text em">Finally</td>
+          <td class="text">
+            Experiment with different <a href="/command/run.html#options">command line options</a> and try using different <a href="/command/data.html">data sets</a>
+          </td>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Dig deeper -->
+  <div class="section">
+    <h2 class="section-title">Dig deeper</h2>
+
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="text em">Learn</td>
+          <td class="text">
+            Find <a href="/command/doc.html">code documentation and research reports</a> that describe the demo, and browse the demo's <a href="/command/source.html">source code</a>
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="text em">Modify</td>
+          <td class="text">
+            <a href="/command/build.html">Rebuild</a> the demo to change its behavior, and learn how to <a href="/command/configure.html">add new content</a> to the demo like files, data sets, scripts, and command line options
+          </td>
+        </tr>
+      </tbody>
+    </table>    
+  </div> <!-- end of section -->
+
+  <!-- Stuck -->
+  <div class="section">
+    <h2 class="section-title">Stuck?</h2>
+
+    <div class="section-content">
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div> <!-- end of section content -->
+  </div> <!-- end of section -->
+  
+</div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<div class="guide"><h1>configure</h1>
+<p>Configure the demo</p>
+<h2>Quick reference</h2>
+<p>View the configuration file</p>
+<pre><code>$ cat /demo/demo.yml
+</code></pre>
+<p>Check your changes to the configuration file</p>
+<pre><code>$ demo configure --check
+</code></pre>
+<h2>Summary</h2>
+<p>The 'demo' command-line tool uses a configuration file to execute commands like 'demo run', 'demo build', and 'demo docs'. The 'demo configure' command prints information about this file so you can understand and change how the demo works.</p>
+<p>The 'demo configure &lt;section&gt;' command prints requirements of a section of the configuration file, along with an example and best practices.</p>
+<p>The 'demo configure --check' command checks that all requirements are met, while the 'demo configure &lt;section&gt; --check' checks a single section.</p>
+<p>When you change the configuration file, you should run 'demo configure --check' to make sure your changes meet the minimum requirements. If you forget to do this, it will happen automatically before another 'demo' command is executed.</p>
+<h2>Configuration file</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Format</td><td>YAML</td></tr>
+<tr><td>Location</td><td>/demo/demo.yml</td></tr>
+</tbody>
+</table>
+<h3>Sections</h3>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>args</td><td>Command-line arguments for configuring the demo</td></tr>
+<tr><td>build</td><td>How to build the demo</td></tr>
+<tr><td>data</td><td>Included data sets for experimenting</td></tr>
+<tr><td>io</td><td>Input and output of the demo (files)</td></tr>
+<tr><td>papers</td><td>Published papers that describe the demo</td></tr>
+<tr><td>run</td><td>How to execute the demo</td></tr>
+<tr><td>source</td><td>Source code of the demo</td></tr>
+<tr><td>title</td><td>Title of the demo</td></tr>
+</tbody>
+</table>
+<h2>More details</h2>
+<p>Learn about a section and its requirements</p>
+<pre><code>$ demo configure &lt;section&gt;
+</code></pre>
+<p>For example</p>
+<pre><code>$ demo configure run
+</code></pre>
+<h2>YAML</h2>
+<p>YAML (&quot;YAML Ain't Markup Language&quot;) is a simple, human-readable data format. Popular alternatives are JSON and TOML. Below is a brief guide that shows how YAML works by example and by comparison.</p>
+<table>
+<thead>
+<tr><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>___[Fields and values]</td><td></td><td></td></tr>
+<tr><td>YAML</td><td>JSON</td><td>TOML</td></tr>
+<tr><td>----</td><td>----</td><td>----</td></tr>
+<tr><td></td><td><pre>{</pre></td></tr>
+<tr><td><pre>pets: 1</pre></td><td><pre>  &quot;pets&quot;: 1,</pre></td><td><pre>pets = 1</pre></td></tr>
+<tr><td><pre>cat: true</pre></td><td><pre>  &quot;cat&quot;: true,</pre></td><td><pre>cat = true</pre></td></tr>
+<tr><td><pre>name: Fred Astair</pre></td><td><pre>  &quot;name&quot;: &quot;Fred Astair&quot;</pre></td><td><pre>name = &quot;Fred Astair&quot;</pre></td></tr>
+<tr><td></td><td><pre>}</pre></td><td></td></tr>
+<tr><td>___[Structures]</td><td></td><td></td></tr>
+<tr><td>YAML</td><td>JSON</td><td>TOML</td></tr>
+<tr><td>----</td><td>----</td><td>----</td></tr>
+<tr><td><pre>pets:</pre></td><td><pre>&quot;pets&quot;: {</pre></td><td><pre>[pets]</pre></td></tr>
+<tr><td><pre>  cats: 1</pre></td><td><pre>  &quot;cats&quot;: 1,</pre></td><td><pre>cats = 1</pre></td></tr>
+<tr><td><pre>  dogs: 2</pre></td><td><pre>  &quot;dogs&quot;: 2</pre></td><td><pre>dogs = 2</pre></td></tr>
+<tr><td></td><td><pre>}</pre></td><td></td></tr>
+<tr><td>___[Arrays]</td><td></td><td></td></tr>
+<tr><td>YAML</td><td>JSON</td><td>TOML</td></tr>
+<tr><td>----</td><td>----</td><td>----</td></tr>
+<tr><td><pre>pets:</pre></td><td><pre>&quot;pets&quot;: [</pre></td><td><pre>pets = [</td></tr>
+<tr><td><pre>  - cat</pre></td><td><pre>  &quot;cat&quot;,</pre></td><td><pre>  &quot;cat&quot;,</pre></td></tr>
+<tr><td><pre>  - dog</pre></td><td><pre>  &quot;dog&quot;</pre></td><td><pre>  &quot;dog&quot;,</pre></td></tr>
+<tr><td></td><td><pre>]</pre></td><td><pre>]</pre></td></tr>
+<tr><td>___[Strings]</td><td></td><td></td></tr>
+<tr><td>YAML</td><td>JSON</td><td>TOML</td></tr>
+<tr><td>----</td><td>----</td><td>----</td></tr>
+<tr><td><pre>field: string</pre></td><td><pre>&quot;field&quot;: &quot;string&quot;</pre></td><td><pre>field = &quot;string&quot;</td></tr>
+<tr><td></td><td></td><td><hr></td></tr>
+<tr><td><pre>field: &gt;-</pre></td><td>N/A</td><td><pre>field = &quot;&quot;&quot;\</pre></td></tr>
+<tr><td><pre>  This is a long</pre></td><td></td><td><pre>        This is a long\</pre></td></tr>
+<tr><td><pre>  string formatted</pre></td><td></td><td><pre>        string formatted\</pre></td></tr>
+<tr><td><pre>  on multiple lines</pre></td><td></td><td><pre>        on multiple lines\</pre></td></tr>
+<tr><td><pre>  (no line break).</pre></td><td></td><td><pre>        (no line break).\</pre></td></tr>
+<tr><td></td><td></td><td><pre>        &quot;&quot;&quot;</pre></td></tr>
+<tr><td>___[Comments]</td><td></td><td></td></tr>
+<tr><td>YAML</td><td>JSON</td><td>TOML</td></tr>
+<tr><td>----</td><td>----</td><td>----</td></tr>
+<tr><td><pre># This is a comment</pre></td><td>N/A</td><td><pre># This is a comment</pre></td></tr>
+<tr><td></td><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h3>[Notes]</h3>
+<ul>
+<li>In YAML, string don't always need to be enclosed in quotes (&quot;cats&quot;), but they must be if they contains special characters (&quot;-&quot;, &quot;:&quot;) that could be confused with YAML syntax (array elements, fields).</li>
+</ul>
+</div>

@@ -1,0 +1,243 @@
+<div class="doc">
+
+  <!-- The title of the demo -->
+  <h1>Ant Colony Search</h1>
+
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  
+  <!-- Quick start -->
+  <div class="section">
+    <h2 class="section-title">Quick start</h2>
+
+    <!-- Show how to enter and run the demo -->
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="block-code">
+              
+<pre><code>$ demo shell dm/ant-colony-search
+</code></pre>
+
+          </td>
+          <td class="pl-1 vcenter text em">Enter the demo</td>
+        </tr>
+        <!--
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="block-code">
+            
+<pre><code>root@...# demo run
+</code></pre>
+
+          </td>
+          <td class="pl-1 vcenter text em">Run the demo</td>
+        </tr>
+        -->
+      </tbody>
+    </table> <!-- end of section content -->
+  </div> <!-- end of section -->  
+  
+  <!--
+  <div class="section">
+
+    <h2 class="section-title">Commands</h2>
+    <div class="section-content flex">
+      
+      <div class="column">
+        <div class="list-header">
+          Run outside
+        </div>
+        <ul>
+          <li>
+            <a href="/command/shell.html">
+              <div class="inline-code bold">shell</div>
+              <div class="text">Enter the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/browse.html">
+              <div class="inline-code bold">browse</div>
+              <div class="text">Explore the demo in a web browser</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/down.html">
+              <div class="inline-code bold">down</div>
+              <div class="text">Shutdown the demo</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <div class="list-header">
+          Run inside
+        </div>
+        <ul>
+          <li>
+            <a href="/command/run.html">
+              <div class="inline-code bold">run</div>
+              <div class="text">Run the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/build.html">
+              <div class="inline-code bold">build</div>
+              <div class="text">Rebuild the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/share.html">
+              <div class="inline-code bold">share</div>
+              <div class="text">Rsync files from the demo to localhost</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/sync.html">
+              <div class="inline-code bold">sync</div>
+              <div class="text">Rsync files from localhost to the demo</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/docs.html">
+              <div class="inline-code bold">docs</div>
+              <div class="text">Find and regenerate docs</div>
+            </a>
+          </li>
+          <li>
+            <a href="/command/configure.html">
+              <div class="inline-code bold">configure</div>
+              <div class="text">Reconfigure the demo</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  -->
+          
+  <!-- Layout of the demo -->
+  <div class="section">
+    <h2 class="section-title">Layout of the demo</h2>
+
+    <table class="section-content">
+      <tbody class="last-p4">
+        <tr>
+          <td class="inline-code ">/root/src</td>
+          <td class="pl-6 text">Source code</td>
+        </tr>
+        <tr>
+          <td class="inline-code ">/root/data</td>
+          <td class="pl-6 text">Data sets</td>
+        </tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="inline-code ">/shared</td>
+          <td class="pl-6 text">Can be synchronized with a local directory</td>
+        </tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="inline-code ">/demo/setup</td>
+          <td class="pl-6 text">Scripts used to setup the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code ">/demo/run</td>
+          <td class="pl-6 text">Scripts for running the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code ">/demo/build</td>
+          <td class="pl-6 text">Scripts for building the demo</td>
+        </tr>
+        <tr>
+          <td class="inline-code ">/demo/docs</td>
+          <td class="pl-6 text">Generated docs</td>
+        </tr>
+        <tr>
+          <td class="inline-code ">/demo/demo.yml</td>
+          <td class="pl-6 text">Configuration file that fully describes the demo</td>
+        </tr>
+      </tbody>
+    </table> <!-- end of section content -->
+  </div> <!-- end of section -->
+  
+  <!-- Experimenting -->
+  <div class="section">
+    <h2 class="section-title">Experimentation guide</h2>
+
+    <div class="section-content">
+      <div class="list-header text bold">Getting started</div>
+      <p>
+        The easiest way to experiment with the demo is inside the <a href="">demo shell</a>, a terminal environment with everything needed by the demo already installed. Inside it, try each of the <a href="">configured run scripts</a> to test what the demo can do. Then try changing the behavior of the demo by using different <a href="">command line options</a> and <a href="">input data</a>.
+      </p>
+
+      <div style="margin-top: 36px;" class="list-header text bold">Digging deeper</div>
+      <p>
+        Once you've seen what the demo can do, you can learn how it works by reading its <a href="">documentation</a>, <a href="">research papers</a>, and <a href="">source code</a>. You can also <a href="">rebuild it</a> after changing the source code to test out new ideas. When you have changes to save, <a href="">add new content to the demo</a> like data sets, scripts, command line options, and source code files, and <a href="">regenerate the documentation</a>.
+      </p>
+    </div>
+  
+    <!--
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="list-header text bold">First</td>
+          <td class="pl-8 text">
+            Get familiar with the <a href="">demo shell</a>, a terminal environment that you'll use to interact with the demo
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="list-header text bold">Then</td>
+          <td class="pl-8 text">
+            Try each of the <a href="/command/run.html#configured">preconfigured runs</a> to see a broader range of what the demo can do
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="list-header text bold">Finally</td>
+          <td class="pl-8 text">
+            Experiment with different <a href="/command/run.html#options">command line options</a> and try using different <a href="/command/data.html">data sets</a>
+          </td>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+  -->
+  
+  <!-- Dig deeper -->
+  <div class="section">
+    <h2 class="section-title">Digging deeper</h2>
+
+    <table class="section-content">
+      <tbody>
+        <tr>
+          <td class="text em">Learn more</td>
+          <td class="pl-6 text">
+            Find <a href="/command/doc.html">code documentation and research reports</a> that describe the demo, and browse the demo's <a href="/command/source.html">source code</a>
+          </td>
+        <tr>
+        <tr class="hspace"></tr>
+        <tr>
+          <td class="text em">Modify the demo</td>
+          <td class="pl-6 text">
+            <a href="/command/build.html">Rebuild</a> the demo to change its behavior, and learn how to <a href="/command/configure.html">add new content</a> to the demo like files, data sets, scripts, and command line options
+          </td>
+        </tr>
+      </tbody>
+    </table>    
+  </div> <!-- end of section -->
+
+  <!-- Stuck -->
+  <div class="section">
+    <h2 class="section-title">Stuck?</h2>
+
+    <div class="section-content">
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div> <!-- end of section content -->
+  </div> <!-- end of section -->
+  
+</div>

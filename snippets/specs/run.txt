@@ -1,0 +1,114 @@
+                                                            type 'q' to exit
+                                                            type '/' to search
+                                                            Type down arrow to scroll
+
+  run
+
+  Run scripts
+
+
+  Quick reference
+  ===============
+
+   View the configuration
+
+     $ cat /demo/demo.yml 
+     
+   Check this section
+
+     $ demo configure run --check
+     
+
+  Summary
+  =======
+
+   The run section contains information on executing the demo, so someone can
+   execute it automatically using preconfigured scripts or manually using
+   command-line arguments.
+
+
+  Requirements
+  ============
+
+                                                   
+   run: . . . . . . . . . . . . . . . . . . . . . How to execute the demo
+                                                    + Can't be missing or empty
+                                                   
+     description: . . . . . . . . . . . . . . . . Summary of what the demo does
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                   
+     configs: . . . . . . . . . . . . . . . . . . Preconfigured ways to run the demo
+                                                    + Must be an array
+                                                    + Can't be missing or empty
+                                                   
+       - name: . . . . . . . . . . . . . . . . .  Name of the configuration
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                   
+         description: . . . . . . . . . . . . . . Description of the configuration
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                   
+         script: . . . . . . . . . . . . . . . .  Path to a script that will execute this 
+                                                  configuration
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                    + Must be an absolute file path
+                                                   
+     examples: . . . . . . . . . . . . . . . . .  Examples of command-line arguments
+                                                    + Must be an array
+                                                    + Can't be missing or empty
+                                                   
+       - description: . . . . . . . . . . . . . . Description of arguments
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                   
+         args: . . . . . . . . . . . . . . . . .  List of command-line arguments
+                                                    + Must be an array
+                                                    + Can't be missing or empty
+                                                   
+           - . . . . . . . . . . . . . . . . . .  A command-line argument
+                                                    + Must be a string
+                                                    + Can't be missing or empty
+                                                   
+   
+
+  Example
+  =======
+
+     run:
+       
+       description: Nuke a planet
+       
+       configs:
+         - name: mars
+           description: Nuke the planet Mars
+           script: /demo/run/mars.sh
+           
+         - name: jupiter
+           description: Nuke the planet Jupiter
+           script: /demo/run/jupiter.sh
+           
+       examples:
+         - description: Send 5 nuclear missiles to Mars
+           args:
+             - '-n 5'
+             - '-i /root/data/mars/coordinates.csv'
+             
+         - description: Nuke Jupiter and notify the UN
+           args:
+             - '--notify contact@un.org'
+             - '-i /root/data/jupiter/coordinates.csv'
+     
+
+  Best practices
+  ==============
+
+   + Use the preconfigured scripts to show off the demo's range of functionality
+
+   + Keep the execution time of scripts and examples short (max 2-3 minutes)
+
+   + Use only 2-3 arguments at a time in command-line examples
+
+

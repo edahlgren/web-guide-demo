@@ -1,0 +1,82 @@
+<div class="guide"><h1>run</h1>
+<p>Run scripts</p>
+<h2>Quick reference</h2>
+<p>View the configuration</p>
+<pre><code>$ cat /demo/demo.yml 
+</code></pre>
+<p>Check this section</p>
+<pre><code>$ demo configure run --check
+</code></pre>
+<h2>Summary</h2>
+<p>The run section contains information on executing the demo, so someone can execute it automatically using preconfigured scripts or manually using command-line arguments.</p>
+<h2>Requirements</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>run:</pre></td><td>How to execute the demo</td></tr>
+<tr><td></td><td><ul><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  description: </pre></td><td>Summary of what the demo does</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  configs:</pre></td><td>Preconfigured ways to run the demo</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    - name: </pre></td><td>Name of the configuration</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      description: </pre></td><td>Description of the configuration</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      script: </pre></td><td>Path to a script that will execute this configuration</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be an absolute file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  examples:</pre></td><td>Examples of command-line arguments</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    - description: </pre></td><td>Description of arguments</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      args:</pre></td><td>List of command-line arguments</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>        - </pre></td><td>A command-line argument</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<pre><code>run:
+  
+  description: Nuke a planet
+  
+  configs:
+    - name: mars
+      description: Nuke the planet Mars
+      script: /demo/run/mars.sh
+      
+    - name: jupiter
+      description: Nuke the planet Jupiter
+      script: /demo/run/jupiter.sh
+      
+  examples:
+    - description: Send 5 nuclear missiles to Mars
+      args:
+        - '-n 5'
+        - '-i /root/data/mars/coordinates.csv'
+        
+    - description: Nuke Jupiter and notify the UN
+      args:
+        - '--notify contact@un.org'
+        - '-i /root/data/jupiter/coordinates.csv'
+</code></pre>
+<h2>Best practices</h2>
+<ul>
+<li>Use the preconfigured scripts to show off the demo's range of functionality</li>
+<li>Keep the execution time of scripts and examples short (max 2-3 minutes)</li>
+<li>Use only 2-3 arguments at a time in command-line examples</li>
+</ul>
+</div>

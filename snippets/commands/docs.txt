@@ -1,0 +1,79 @@
+                                                            type 'q' to exit
+                                                            type '/' to search
+                                                            Type down arrow to scroll
+
+  docs
+
+  Find and generate documentation
+
+
+  Quick reference
+  ===============
+
+   Show this guide
+
+     $ demo docs
+     
+   Re-generate the help guides in /docs/help
+
+     $ demo docs --make
+     
+
+  Summary
+  =======
+
+   The 'demo docs' command prints a map of all documentation in this demo. See
+   'Overview' below.
+
+   The 'demo docs --make' command uses a Demofile to create markdown guides, which
+   then are converted to plain text and html for easy viewing.
+
+   Input
+   
+     /demo/Demofile
+     /demo/docs/templates/*.md
+     /demo/docs/templates/*.html
+   
+   Output
+   
+     /docs/help/*.txt
+     /docs/help/*.html
+   
+
+  Overview
+  ========
+
+   Source docs
+   
+     /root/src/acotsp/README      Contains a high-level documentation and 
+                                    instructions
+   
+   Research papers
+   
+   
+   Demo command guides
+   
+     /docs/guides/help.txt        'demo --help'
+     /docs/guides/run.txt         'demo run --help'
+     /docs/guides/build.txt       'demo build --help'
+     /docs/guides/share-sync.txt  'demo share --help'
+                                  'demo sync --help'
+   
+   File guides
+   
+     /docs/guides/docs.txt        'demo docs'
+     /docs/guides/data.txt        'demo data'
+     /docs/guides/source.txt      'demo source'
+   
+
+  Help
+  ====
+
+   View this guide
+
+     $ demo docs
+     
+   Same as above
+
+     $ demo docs --help
+     

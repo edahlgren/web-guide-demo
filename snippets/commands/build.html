@@ -1,0 +1,56 @@
+<div class="guide"><h1>build</h1>
+<p>Rebuild the source code</p>
+<h2>Quick reference</h2>
+<p>Build sources using the default build configuration</p>
+<pre><code>$ demo build
+</code></pre>
+<p>Build sources cleanly, removing object files and old binaries first</p>
+<pre><code>$ demo build --clean
+</code></pre>
+<p>View stdout and stderr build logs</p>
+<pre><code>$ cat build.log
+$ cat build.error
+</code></pre>
+<h2>Ways to build</h2>
+<p>Use a preconfigured build</p>
+<pre><code>$ demo build &lt;configuration&gt;
+</code></pre>
+<p>Manually execute the commands produced by</p>
+<pre><code>$ demo build &lt;configuration&gt; --dryrun
+</code></pre>
+<h2>Configured builds</h2>
+<p>Build the demo with gcc</p>
+<pre><code>$ demo build default
+</code></pre>
+<p>Build like default at optimization level 3</p>
+<pre><code>$ demo build optimized
+</code></pre>
+<p>Build like default and include debug symbols</p>
+<pre><code>$ demo build debug
+</code></pre>
+<h2>Files</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>/root/src/acotsp/Makefile</td><td>Contains commands for building the acotsp binary</td></tr>
+<tr><td>/root/src/acotsp/acotsp</td><td>The acotsp binary, the output of a successful build</td></tr>
+</tbody>
+</table>
+<h2>More</h2>
+<p>Learn about the source code used in these builds</p>
+<pre><code>$ less /docs/src/README
+</code></pre>
+<h3>Read the build scripts</h3>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>default</td><td>/demo/build/default.sh</td></tr>
+<tr><td>optimized</td><td>/demo/build/optimized.sh</td></tr>
+<tr><td>debug</td><td>/demo/build/optimized.sh</td></tr>
+</tbody>
+</table>
+</div>

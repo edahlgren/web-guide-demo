@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>/</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="nav-wrapper">
+        <div class="nav">
+          
+          <div class="nav-home">
+            <a href="{{&nav.index.path}}">
+              Home
+            </a>
+          </div>
+        
+          <div class="nav-section">
+            <ul>
+              {{#nav.commands}}
+              <li class="nav-item">
+                <a href="{{&path}}">
+                  <div class="nav-title">{{title}}</div>
+                  <div class="nav-description">{{desc}}</div>
+                </a>
+              </li>
+              {{/nav.commands}}
+            </ul>
+          </div>
+
+          <!--
+          <h6>Configure</h6>
+          <div class="nav-section">
+            <ul>
+              {{#nav.specs}}
+              <li class="nav-item">
+                <a href="{{&path}}">
+                  <span class="nav-title">{{title}}</span> <span class="nav-description">{{desc}}</span>
+                </a>
+              </li>
+              {{/nav.specs}}
+            </ul>
+          </div>
+          -->
+        </div>
+        
+      </div>
+      <!-- end nav -->
+
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="page">
+            {{&content}}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+/** Fonts **/
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700");
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/Avenir.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirMediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("http://127.0.0.1:8080/assets/fonts/AvenirBoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic; }
+
+/** Defaults **/
+
+body {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    color: #242424;
+    text-align: left;
+    line-height: 25px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 16px;
+    font-family: 'Avenir', sans-serif;
+    margin: 0px;
+    margin-top: 36px;
+    font-weight: bold;
+    color: #242424;
+}
+
+p, ul, ol {
+    margin: 0px;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: 'Avenir', sans-serif;
+}
+
+p {
+    padding-top: 8px;
+}
+
+a {
+    text-decoration: underline;
+    color: #242424;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #242424;
+}
+
+/** Basic layout **/
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.nav-wrapper {
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 50rem) {
+    .nav-wrapper {
+        flex-wrap: nowrap;
+        position: absolute;
+        width: 248px;
+        height: 100%;
+        flex-direction: column;
+        border-right: 1px solid #eeebee;
+        align-items: flex-end;
+    }
+}
+
+@media (min-width: 66.5rem) {
+    .nav-wrapper {
+        width: calc((100% - 1064px) / 2 + 248px);
+        min-width: 248px;
+    }
+}
+
+@media (min-width: 87.5rem) {
+    .nav-wrapper {
+        width: calc((100% - 1400px) / 2 + 248px);
+        min-width: 248px;
+    }
+}
+
+.nav {
+    font-family: "Source Code Pro", sans-serif;
+    width: 248px;
+    padding-top: 8rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    overflow-y: auto;
+}
+
+@media (min-width: 50rem) {
+    .content-wrapper {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        overflow-y: scroll
+    }
+}
+
+@media (min-width: 50rem) {
+    .content {
+        position:relative;
+        max-width: 800px;
+        margin-left: 248px
+    }
+}
+
+@media (min-width: 66.5rem) {
+    .content {
+        margin-left: calc((100% - 1064px) / 2 + 248px);
+    }
+}
+
+@media (min-width: 87.5rem) {
+    .content {
+        margin-left: calc((100% - 1400px) / 2 + 248px);
+    }
+}
+
+.page {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 3rem;
+}
+
+@media (min-width: 66.5rem) {
+    .page {
+        padding-left: 4rem;
+    }
+}
+
+@media (min-width: 87.5rem) {
+    .page {
+        padding-left: 6rem;
+    }
+}
+
+header {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/** Navigation style **/
+
+.nav-section ul {
+    list-style: none;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.nav-section ul li {
+    margin-top: 1.5rem;
+}
+
+.nav-section ul li a {
+    text-decoration: none;
+}
+
+.nav-home {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav h6 {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.nav-home a {
+    text-decoration: none;
+}
+
+.nav-title {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #242424;
+}
+
+.nav-description {
+    font-size: 12.5px;
+    font-weight: 400;
+}
+
+/** Content style **/
+
+.doc h1 {
+    font-size: 20px;
+    font-family: "Source Code Pro", sans-serif;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+.doc h2 {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 64px;
+    margin-bottom: 36px;
+}
+
+.doc .em {
+    font-style: italic;    
+}
+
+.doc .bold {
+    font-weight: 600;    
+}
+
+.doc .semibold {
+    font-weight: 500;    
+}
+
+.doc table {
+    width: 100%;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.doc td {
+    vertical-align: top;
+}
+
+.doc td.vcenter {
+    vertical-align: middle;
+}
+
+.doc .inline-code {
+    font-family: "Source Code Pro", sans-serif;
+}
+
+.doc .mb-1 {
+    margin-bottom: 1rem;
+}
+
+.doc .pl-1 {
+    padding-left: 1rem;
+}
+
+.doc .pl-8 {
+    padding-left: 8rem;
+}
+
+.doc .pl-auto {
+    padding-left: auto;
+}
+
+.doc .text {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.doc .hspace {
+    height: 0.75rem;
+}
+
+.doc pre {
+    background-color: #f6f8fa;
+    padding: 16px;
+    margin: 0;
+}
+
+.doc .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.doc .align-right {
+}
+
+.doc .list-header {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #6e6e6e;
+    text-transform: uppercase;
+}
+
+.doc ul {
+    list-style: none;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.doc ul li {
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+.doc ul li a {
+    text-decoration: none;
+}

@@ -1,0 +1,65 @@
+<div class="guide"><h1>papers</h1>
+<p>Research papers and reports</p>
+<h2>Quick reference</h2>
+<p>View the configuration</p>
+<pre><code>$ cat /demo/demo.yml 
+</code></pre>
+<p>Check this section</p>
+<pre><code>$ demo configure papers --check
+</code></pre>
+<h2>Summary</h2>
+<p>The papers section contains information about research papers that describe functionality of the demo and that are packaged in the demo for easy access.</p>
+<h2>Requirements</h2>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>papers:</pre></td><td>Published papers that describe the demo</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>  - path: </pre></td><td>Path to the published paper</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li><li>Must be an absolute file path</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    year_published: </pre></td><td>Year the paper was published</td></tr>
+<tr><td></td><td><ul><li>Must be a number</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    authors:</pre></td><td>List of authors of the paper</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      - </pre></td><td>Author full name</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>    keywords:</pre></td><td>List of main concepts that this paper describes</td></tr>
+<tr><td></td><td><ul><li>Must be an array</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+<tr><td><pre>      - </pre></td><td>Main concept as a phrase or keyword</td></tr>
+<tr><td></td><td><ul><li>Must be a string</li><li>Can't be missing or empty</li></ul></td></tr>
+<tr><td></td><td><hr></td></tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<pre><code>papers:
+  - path: /docs/papers/RussianMissiles.pdf
+    year_published: 1986
+    authors:
+      - Mikhail Gorbachev
+      - Konstantin Chernenko
+    keywords:
+      - Russian Nuclear Missile Design
+
+  - path: /docs/papers/KoreanMissiles.pdf
+    year_published: 2012
+    authors:
+      - Kim Jong Un
+    keywords:
+      - Korean Nuclear Missile Design
+</code></pre>
+<h2>Best practices</h2>
+<ul>
+<li>List up to 10 authors (first 10)</li>
+<li>Avoid packaging papers that are not published in an open access journal</li>
+<li>If a paper isn't freely available, contact the author for help</li>
+</ul>
+</div>
