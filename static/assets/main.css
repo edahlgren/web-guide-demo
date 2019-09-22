@@ -37,15 +37,15 @@
   font-weight: 700;
   font-style: italic; }
 
-/** Defaults **/
+/** Styles for common elements **/
 
 body {
     background-color: #fff;
     margin: 0 auto;
     padding: 0;
-    font-family: "Source Code Pro", sans-serif;
-    font-size: 12.5px;
-    font-weight: 400;
+    font-family: 'Avenir', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
     letter-spacing: 0.25px;
     color: #242424;
     text-align: left;
@@ -53,24 +53,72 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: 16px;
-    font-family: 'Avenir', sans-serif;
-    margin: 0px;
-    margin-top: 36px;
-    font-weight: bold;
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 14px;    
+    font-weight: 500;
     color: #242424;
+    margin: 0px;
+    margin-bottom: 1rem;
 }
 
-p, ul, ol {
-    margin: 0px;
-    color: #242424;
-    font-size: 14px;
-    font-weight: 200;
-    font-family: 'Avenir', sans-serif;
+.mb-0\.25 {
+    margin-bottom: 0.25rem;
+}
+
+.under-h1 {
+    font-size: 12.5px;
+    font-style: italic;
+    color: #6e6e6e;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 12.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #6e6e6e;
+    margin-bottom: 0.5rem;
 }
 
 p {
-    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 8px;
+}
+
+table {
+    width: 100%;
+    line-height: 20px;
+}
+
+table.wrap {
+    width: fit-content;
+}
+
+table.wrap td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+td {
+    vertical-align: top;
+}
+
+pre {
+    background-color: #f6f8fa;
+    padding: 16px;
+    margin: 0;
+    font-size: 12.5px;
+}
+
+pre.output {
+    background-color: #ffffff;
+    border-bottom: 4px solid #f6f8fa;
+    font-size: 10px;
+    line-height: 16px;
 }
 
 a {
@@ -83,269 +131,227 @@ a:hover {
     background-color: #242424;
 }
 
-/** Basic layout **/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+table.img-grid {
+    border-spacing: 1rem;
+}
+
+img {
+}
+
+.grid-img {
+    width: 100%;
+}
+
+.under-img {
+    font-size: 12.5px;
+    font-style: italic;
+    color: #6e6e6e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 12.5px;
+    font-style: italic;
+    color: #6e6e6e;
+    margin-bottom: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/** Legends **/
+
+.legend {
+    font-size: 12px;
+}
+
+/** Container, nav, content **/
 
 .container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding-top: 6rem;
+    padding-bottom: 10rem;
     display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    justify-content: start;
 }
 
-.nav-wrapper {
-    z-index: 100;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media (min-width: 50rem) {
-    .nav-wrapper {
-        flex-wrap: nowrap;
-        position: absolute;
-        width: 248px;
-        height: 100%;
-        flex-direction: column;
-        border-right: 1px solid #eeebee;
-        align-items: flex-end;
-    }
-}
-
-@media (min-width: 66.5rem) {
-    .nav-wrapper {
-        width: calc((100% - 1064px) / 2 + 248px);
-        min-width: 248px;
-    }
-}
-
-@media (min-width: 87.5rem) {
-    .nav-wrapper {
-        width: calc((100% - 1400px) / 2 + 248px);
-        min-width: 248px;
-    }
+.nav-container {
+    width: 25%;
 }
 
 .nav {
-    font-family: "Source Code Pro", sans-serif;
-    width: 248px;
-    padding-top: 8rem;
-    padding-bottom: 1rem;
-    padding-right: 2rem;
-    overflow-y: auto;
+    width: 200px;
+    padding-top: 6rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    margin-left: auto;
 }
 
-@media (min-width: 50rem) {
-    .content-wrapper {
-        position:absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-overflow-scrolling: touch;
-        overflow-x: hidden;
-        overflow-y: scroll
-    }
+.content {
+    width: 50%;
+    padding-top: 3rem;
 }
 
-@media (min-width: 50rem) {
-    .content {
-        position:relative;
-        max-width: 800px;
-        margin-left: 248px
-    }
+.doc {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media (min-width: 66.5rem) {
-    .content {
-        margin-left: calc((100% - 1064px) / 2 + 248px);
-    }
-}
-
-@media (min-width: 87.5rem) {
-    .content {
-        margin-left: calc((100% - 1400px) / 2 + 248px);
-    }
-}
-
-.page {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
-    padding-left: 3rem;
-}
-
-@media (min-width: 66.5rem) {
-    .page {
-        padding-left: 4rem;
-    }
-}
-
-@media (min-width: 87.5rem) {
-    .page {
-        padding-left: 6rem;
-    }
-}
-
-header {
-    margin-top: 25px;
-    margin-bottom: 10px;
+.flex {
+    display: flex;
 }
 
 /** Navigation style **/
 
-.nav-section ul {
+.nav ul {
     list-style: none;
     list-style-type: none;
     padding-inline-start: 0px;
 }
 
-.nav-section ul li {
-    margin-top: 1.5rem;
-}
-
-.nav-section ul li a {
+.nav table a {
     text-decoration: none;
 }
 
-.nav-home {
-    font-size: 14px;
-    font-weight: 600;
+.nav table tr.title {
+    font-family: "Source Code Pro", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     text-transform: uppercase;
 }
 
-.nav h6 {
-    font-size: 14px;
-    font-weight: normal;
-    text-transform: uppercase;
-    margin-top: 1rem;
-}
+/** Content spacing **/
 
-.nav-home a {
-    text-decoration: none;
-}
-
-.nav-title {
-    font-family: "Source Code Pro", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #242424;
-}
-
-.nav-description {
-    font-size: 12.5px;
-    font-weight: 400;
-}
-
-/** Content style **/
-
-.doc h1 {
-    font-size: 20px;
-    font-family: "Source Code Pro", sans-serif;
-    font-weight: 300;
-    margin-bottom: 16px;
-}
-
-.doc h2 {
-    font-family: "Source Code Pro", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    font-style: italic;
-    margin-top: 64px;
-    margin-bottom: 36px;
-}
-
-.doc .em {
-    font-style: italic;    
-}
-
-.doc .bold {
-    font-weight: 600;    
-}
-
-.doc .semibold {
-    font-weight: 500;    
-}
-
-.doc table {
-    width: 100%;
-    line-height: 20px;
-    font-size: 14px;
-}
-
-.doc td {
-    vertical-align: top;
-}
-
-.doc td.vcenter {
-    vertical-align: middle;
-}
-
-.doc .inline-code {
-    font-family: "Source Code Pro", sans-serif;
-}
-
-.doc .mb-1 {
-    margin-bottom: 1rem;
-}
-
-.doc .pl-1 {
+.vspace {
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.doc .pl-8 {
-    padding-left: 8rem;
+.hspace-0\.5 {
+    height: 0.25rem;
 }
 
-.doc .pl-auto {
-    padding-left: auto;
-}
-
-.doc .text {
-    font-family: 'Avenir', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-}
-
-.doc .hspace {
+.hspace-1 {
     height: 0.75rem;
 }
 
-.doc pre {
-    background-color: #f6f8fa;
-    padding: 16px;
-    margin: 0;
+.hspace-2 {
+    height: 1.5rem;
 }
 
-.doc .flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.vcenter {
+    vertical-align: middle;
 }
 
-.doc .align-right {
-}
-
-.doc .list-header {
-    font-size: 12.5px;
-    font-weight: 400;
-    color: #6e6e6e;
-    text-transform: uppercase;
-}
-
-.doc ul {
-    list-style: none;
-    list-style-type: none;
-    padding-inline-start: 0px;
-}
-
-.doc ul li {
+.mt-1 {
     margin-top: 1rem;
-    font-size: 14px;
 }
 
-.doc ul li a {
-    text-decoration: none;
+.mt-1\.5 {
+    margin-top: 1.5rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+mb-0\.25 {
+    margin-bottom: 0.25rem;
+}
+
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.pr-0\.5 {
+    padding-right: 0.5rem;
+}
+
+.pr-0 {
+    padding-right: 0rem;
+}
+
+.pr-0\.5 {
+    padding-right: 0.5rem;
+}
+
+.pr-1 {
+    padding-right: 1rem;
+}
+
+.pl-4 {
+    padding-left: 4rem;
+}
+
+.pl-6 {
+    padding-left: 6rem;
+}
+
+/** Content font styles **/
+
+.em {
+    font-style: italic;    
+}
+
+.inline-code {
+    font-family: "Source Code Pro", sans-serif;
+    font-weight: 300;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/** Typographic labels **/
+
+.label {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/** Colors **/
+
+.red {
+    color: #ff0000;
+}
+
+.purple {
+    color: #9172b5;
+}
+
+.light-blue {
+    color: #00bbff;
+}
+
+.grey-blue {
+    color: #8095a6;
+}
+
+/** Code notes **/
+
+.underhang {
+    margin-top: 2rem;
+    margin-left: auto;
+    width: fit-content;
 }

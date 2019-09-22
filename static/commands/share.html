@@ -180,152 +180,81 @@
 
       <!-- start content -->
       <div class="content">
-        <!-- Doc content -->
-<div class="doc">
-
-  <!-- Demo title -->
-  <h1 id="title">Guide to Ant Colony Search</h1>
-
-  <!-- Demo short description -->
-  <p>
-    The <span class="inline-code">ant colony search</span> demo solves the traveling salesman problem using an artificial colony of ants. The traveling salesman problem is to find the shortest roundtrip through a region, visiting every city and town. For example:
-  </p>
-
-  <table class="img-grid">
-    <tbody>
-      <tr>
-        <td>
-          <div class="under-img">Luxembourg<br/>634 cities</div>
-          <img class="grid-img" src="/assets/images/luxembourg_with_cities.png" />
-        </td>
-        <td>
-          <div class="under-img">Nicaragua<br/>2373 cities</div>
-          <img class="grid-img" src="/assets/images/nicaragua_with_cities.png" />
-        </td>
-        <td>
-          <div class="under-img">Greece<br/>9882 cities</div>
-          <img class="grid-img" src="/assets/images/greece_with_cities.png" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img class="grid-img" src="/assets/images/luxembourg_with_tour.png" />
-        </td>
-        <td>
-          <img class="grid-img" src="/assets/images/nicaragua_with_tour.png" />
-        </td>
-        <td>
-          <img class="grid-img" src="/assets/images/greece_with_tour.png" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>
-     In the demo, artificial ants act like the traveling salesmen. As they explore various paths, the ant share information with their nearest neighbors, so as a collaborative swarm they all quickly find the best path.
-  </p>
-  
-  <!-- Demo layout -->
-  <h2 class="mt-2" id="layout-of-the-demo">Layout of the demo</h2>
-
-  <!-- These could also be links to the source,
-       and since that adds more context, it's probably
-       a good idea -->
-  <table>
-    <tbody>
-      <tr>
-        <td><div class="label light-blue pr-0.5">&bull;</div></td>
-        <td class="inline-code">/root</td>
-        <td class="pl-4 ">Home directory</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="inline-code">/root/data</td>
-        <td class="pl-4 ">Data sets</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="inline-code">/root/help</td>
-        <td class="pl-4 ">Help guides</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="inline-code">/root/src</td>
-        <td class="pl-4 ">Source code</td>
-      </tr>
-      <tr class="hspace-1"></tr>
-      <tr>
-        <td><span class="label red pr-0.5">&bull;</span></td>
-        <td class="inline-code">/shared</td>
-        <td class="pl-4 ">This directory can be synchronized with a local directory outside of the demo, so you can edit files using your own tools</td>
-      </tr>
-      <tr class="hspace-1"></tr>
-      <tr>
-        <td></td>
-        <td class="inline-code">/demo</td>
-        <td class="pl-4 ">Contains scripts for installing, building, and running the demo</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="inline-code">/demo/demo.yml</td>
-        <td class="pl-4 ">Configuration file</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="legend underhang">
-    <tr>
-      <td><span class="label light-blue">&bull;</span></td>
-      <td>=</td>
-      <td>In the demo you are the root user with root permissions</td>
-    </tr>
-    <tr>
-      <td><span class="label red">&bull;</span></td>
-      <td>=</td>
-      <td>Learn how with the <a href="/commands/share.html" class="inline-code">share</a> command</td>
-    </tr>
-  </table>
-  <!-- end of Demo layout -->
-  
-  <!-- First time guide -->
-  <h2 class="mt-1.5" id="first-time-guide">First time guide</h2>
-
-  <h3>Enter the demo</h3>
-  <p>
-    The easiest way to experiment with the demo is inside the "demo shell", a terminal environment with everything needed by the demo already installed. First install the <a class="inline-code" href="">demo</a> command line tool. Then execute this command to enter the demo and get access to the shell:
-  </p>
-
-  <pre><code>$ demo shell dm&#x2F;ant-colony-search
+        <div class="guide"><h1>share</h1>
+<p>Rsync from the demo to localhost</p>
+<h2>Quick reference</h2>
+<p>Access a copy of /root/src from a shared directory outside the demo</p>
+<pre><code>$ demo share /root/src
 </code></pre>
-  
-  <div class="mt-2 flex">
-    <div>
-      <h3>Try it</h3>
-      <p>
-        Try each of the <a href="">configured run scripts</a> to test what the demo can do. Then try changing the behavior of the demo by using different <a href="">command line options</a> and <a href="">input data</a>.
-      </p>
-    </div>
-    <div class="vspace"></div>
-    <div>
-      <h3>Dig deeper</h3>
-      <p>
-        Once you've seen what the demo can do, you can learn how it works by reading its <a href="">documentation</a>, <a href="">research papers</a>, and <a href="">source code</a>. You can also <a href="">change the source code</a> to test out new ideas.
-      </p>
-    </div>
-  </div>
-  <!-- end of First time guide -->
-
-  <!-- Stuck -->
-  <h2 class="mt-2" id="stuck">Stuck?</h2>
-
-  <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <!-- end of Stuck -->
-  
+<p>Sync changes you made in a shared directory so they appear in /root/src in the demo</p>
+<pre><code>$ demo sync /root/src
+</code></pre>
+<p>Access an exact copy of /root/src from a shared directory, deleting files in the shared directory if necessary</p>
+<pre><code>$ demo share /root/src --completely
+</code></pre>
+<p>Sync changes to /root/src completely, deleting files under /root/src in the demo if necessary</p>
+<pre><code>$ demo sync /root/src --completely
+</code></pre>
+<h2>Summary</h2>
+<p>When you run 'demo shell' to enter a demo, you select a shared directory whose contents will show up in the demo under /shared. When you change the contents of your shared directory, those changes will also appear in /shared, and vice versa.</p>
+<p>'demo share' uses rsync to efficiently copy a directory in the demo (e.g. /root/src) to the same directory in /shared (e.g. /shared/root/src). Use this command to access demo files from your shared directory outside the demo, allowing you to view and change the demo files using your favorite editors and tools.</p>
+<p>'demo sync' uses rsync to efficiently copy a directory in /shared (e.g. /shared/root/src) back to the same directory in the demo (e.g. /root/src). Use this command to pull changes you made in your shared directory back into the demo.</p>
+<h2>Ways to share and sync</h2>
+<p>Share and sync or your current directory</p>
+<pre><code>$ demo share
+$ demo sync
+</code></pre>
+<p>Share and sync a specific directory</p>
+<pre><code>$ demo share /dir
+$ demo sync /dir
+</code></pre>
+<p>Share and sync a directory completely, allowing files to be deleted (use cautiously)</p>
+<pre><code>$ demo share /dir --completely
+$ demo sync /dir --completely
+</code></pre>
+<p>Manually execute the rsync commands produced by</p>
+<pre><code>$ demo share /dir --dryrun
+$ demo sync /dir --dryrun
+</code></pre>
+<p>Show rsync output, like files copied</p>
+<pre><code>$ demo share /dir --verbose
+$ demo sync /dir --verbose
+</code></pre>
+<h2>Example</h2>
+<p>Share a repository of code in /root/src</p>
+<pre><code>$ demo share /root/src/repo
+</code></pre>
+<p>Edit the files in your shared directory outside of the demo. Then pull in the changes</p>
+<pre><code>$ demo sync /root/src/repo
+</code></pre>
+<p>Rebuild and run the default configuration with your changes</p>
+<pre><code>$ demo build &amp;&amp; demo run
+</code></pre>
+<h2>Why this workflow</h2>
+<p>The files inside the demo are likely owned by a different user (e.g. root) than the files outside the demo (e.g. your user ID). When you run 'demo share', files are not only efficiently copied, they are also changed so you own them and therefore can modify them outside of the demo. When you run 'demo sync', file ownership is changed to your user in the demo so you can also easily access them in the demo again.</p>
+<p>Some tools do this automatically, like the unison tool and most network filesystems. We use rsync because:</p>
+<ul>
+<li>No setup required</li>
+<li>You choose when to sync, as needed</li>
+<li>It's stable and easy to understand (e.g. copy file diffs)</li>
+</ul>
+<p>If you want to keep some directories in the demo automatically in sync with your shared directory, you can write a small script that executes 'demo share' and 'demo sync' in a loop. A script isn't provided because you may have specific needs and preferences for handling syncing errors that happen in the background.</p>
+<h2>Help</h2>
+<p>View this guide</p>
+<pre><code>$ demo share --help
+</code></pre>
+<p>Same as above</p>
+<pre><code>$ demo sync --help
+</code></pre>
+<h2>More</h2>
+<p>Learn more about the rsync command</p>
+<pre><code>$ rsync --help
+</code></pre>
+<p>Read the rsync manual</p>
+<pre><code>$ apt-get install man
+$ man rsync
+</code></pre>
 </div>
-<!-- end of Doc content -->
-
       </div>
       <!-- end content -->
       

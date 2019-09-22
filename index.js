@@ -54,126 +54,57 @@ function exec(config) {
     
     console.log("", "Templating html for", config.out, "...", "\n");
     
-    fsExtra.ensureDirSync(path.join(config.out, "command"));
-    fsExtra.ensureDirSync(path.join(config.out, "spec"));
-    
-    // Read the files and parse info
-    let index = file_info(config.index);
-    let commands = config.commands.map(file_info);
-    let specs = config.specs.map(file_info);
-    
-    // Create the navigation info
-    let nav = {
-        index: {
-            title: index.title,
-            desc: index.description,
-            path: "/index.html"
-        },
-        commands: commands.map(function(command) {
-            return {
-                title: command.title,
-                desc: command.description,
-                path: "/command/" + command.base
-            };
-        }),
-        specs: specs.map(function(spec) {
-            return {
-                title: spec.title,
-                desc: spec.description,
-                path: "/spec/" + spec.base
-            };
-        })
-    };
+    fsExtra.ensureDirSync(path.join(config.out, "commands"));
+    fsExtra.ensureDirSync(path.join(config.out, "guides"));
 
+    let nav_paths = {
+        index: "/index.html",
+        guides: {
+            run: "/guides/run.html",
+            change: "/guides/change.html",
+            learn: "/guides/learn.html",
+            configure: "/guides/configure.html"
+        },
+        commands: {
+            shell: "/commands/shell.html",
+            browse: "/commands/browse.html",
+            run: "/commands/run.html",
+            build: "/commands/build.html",
+            share_sync: "/commands/share_sync.html",
+            check: "/commands/check.html"
+        }
+    };
+    
     // Read in the html template
     let t = fs.readFileSync(config.template, 'utf8');
 
-    // Template the index file
-    template(t, nav, index.text,
-             path.join(config.out, "index.html"));
-
-    // Template each command file
-    commands.forEach(function(command) {
-        template(t, nav, command.text,
-                 path.join(config.out, "command", command.base));
+    // Template the index
+    template({
+        input: config.index,
+        template: t,
+        nav: nav_paths,
+        out: path.join(config.out, "index.html")
     });
 
-    // Template each spec file
-    specs.forEach(function(spec) {
-        template(t, nav, spec.text,
-                 path.join(config.out, "spec", spec.base));
+    // Template each of the commands
+    config.commands.forEach(function(command_path) {
+        template({
+            input: command_path,
+            template: t,
+            nav: nav_paths,
+            out: path.join(config.out, "commands", path.basename(command_path))
+        });
     });
 
     console.log("");    
 }
 
-function template(tmpl, nav, content, out) {
-    let html = mustache.render(tmpl, {
-        nav: nav,
-        content: content
+function template(config) {
+    let text = fs.readFileSync(config.input, 'utf8');
+    let html = mustache.render(config.template, {
+        nav: config.nav,
+        content: text
     });
-    fs.writeFileSync(out, html, 'utf8');
-    console.log(" ", logSymbols.success, out);
-}
-
-function file_info(file) {
-    // Read in the snippet
-    let text = fs.readFileSync(file, 'utf8');
-    
-    // Parse the snippet looking for a title and description
-    let info = find_info(text);
-    
-    // Parse the basename of the file
-    let base = path.basename(file);
-    
-    return {
-        base: base,
-        text: text,
-        title: info.title,
-        description: info.desc
-    };
-}
-
-function find_header_text(text) {
-    const dom = new JSDOM(text);
-    
-    let header = dom.window.document.querySelector('h1');
-    if (!header) {
-        console.log("Failed to find h1");
-        process.exit(1);
-    }
-
-    return header.textContent;
-}
-
-function find_info(text) {
-    const dom = new JSDOM(text);
-    
-    let header = dom.window.document.querySelector('h1');
-    if (!header) {
-        console.log("Failed to find h1");
-        process.exit(1);
-    }
-        
-    let next = header.nextSibling;
-    let has_desc = false;
-    while (next) {
-        if (!next.tagName) {
-            next = next.nextSibling;
-            continue;
-        }
-        
-        if (next.tagName == "P") {
-            has_desc = true;
-            break;
-        }
-        
-        console.log("Failed to find paragraph after h1, got <" + next.tagName + "> instead");
-        break;
-    }
-    
-    return {
-        title: header.textContent,
-        desc: (has_desc ? next.textContent : "")
-    };
+    fs.writeFileSync(config.out, html, 'utf8');
+    console.log(" ", logSymbols.success, config.out);
 }
