@@ -72,6 +72,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.small-uppercase {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
 h3 {
     font-size: 12.5px;
     text-transform: uppercase;
@@ -88,6 +93,12 @@ p {
 table {
     width: 100%;
     line-height: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    vertical-align: top;
+    padding: 0;
 }
 
 table.wrap {
@@ -99,12 +110,32 @@ table.wrap td {
     padding-right: 1rem;
 }
 
+table td.inline-code {
+    font-size: 11px;
+}
+
+table .default {
+    background-color: rgba(242, 242, 228, 0.75);
+    text-align: center;
+}
+
+table .option {
+    font-family: "Source Code Pro", sans-serif;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: right;
+    font-size: 11px;
+}
+
 .nowrap {
     white-space: nowrap;
 }
 
-td {
-    vertical-align: top;
+.extended-table {
+    width: 200%;
+    margin-left: -50%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 pre {
@@ -115,10 +146,14 @@ pre {
 }
 
 pre.output {
-    background-color: #ffffff;
-    border-bottom: 4px solid #f6f8fa;
+    background-color: rgba(242, 242, 228, 0.35);
     font-size: 10px;
     line-height: 16px;
+    color: #808080;
+}
+
+pre .prompt {
+    color: rgba(106, 137, 171, 0.65);
 }
 
 a {
@@ -183,6 +218,7 @@ img {
     padding-bottom: 10rem;
     display: flex;
     justify-content: start;
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -206,6 +242,10 @@ img {
     width: 650px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hangright {
+    margin-left: auto;
 }
 
 .flex {
@@ -254,6 +294,10 @@ img {
     vertical-align: middle;
 }
 
+.mt-0\.5 {
+    margin-top: 0.5rem;
+}
+
 .mt-1 {
     margin-top: 1rem;
 }
@@ -274,6 +318,14 @@ mb-0\.25 {
     margin-bottom: 0.25rem;
 }
 
+.pt-0\.5 {
+    padding-top: 0.5rem;
+}
+
+.pl-0\.25 {
+    padding-left: 0.25rem;
+}
+
 .pl-1 {
     padding-left: 1rem;
 }
@@ -284,6 +336,10 @@ mb-0\.25 {
 
 .pr-0 {
     padding-right: 0rem;
+}
+
+.pr-0\.25 {
+    padding-right: 0.25rem;
 }
 
 .pr-0\.5 {
@@ -310,7 +366,11 @@ mb-0\.25 {
 
 .inline-code {
     font-family: "Source Code Pro", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+}
+
+.align-center {
+    text-align: center;
 }
 
 .align-left {
@@ -328,6 +388,13 @@ mb-0\.25 {
     font-size: 10px;
     font-weight: bold;
     text-align: right;
+}
+
+.label-center {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
 }
 
 /** Colors **/
