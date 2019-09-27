@@ -179,77 +179,7 @@
       <!-- end nav -->
 
       <!-- start doc -->
-      <!-- Doc content -->
-<div id="doc" class="doc">
-
-  <div class="section">            <!-- 100% of non-nav -->
-    <div class="middle-width content-ml">
-
-      <h1 class="mb-0.25" id="title">Run the demo</h1>
-      <p>This guide is for your first time running the demo. Afterwards, the reference guide to the <a href="" class="inline-code">run</a> command likely will be more helpful.
-
-      <h2 class="mt-2 mb-0">What to expect</h2>
       
-      <h2 class="mt-2 mb-0">Quickly try it out</h2>
-
-      <p>
-        First pick one of the built-in scripts. These scripts run quickly using test data included in the demo. Next to the name of each script, you'll see a description of what it does, how long it should take, and how it's configured:
-      </p>
-
-      <pre class="output"><code>djibouti      Find the shortest roundtrip through Djibouti (5s)
-qatar         Find the shortest roundtrip through Qatar (5s)
-luxembourg    Find the shortest roundtrip through Luxembourg (5s)
-</code></pre>
-
-      <p>
-        Then use the <span class="inline-code">run</span> command to run the script. At the beginning under <span class="inline-code">[Command line]</span> you'll see the content of the script, showing how the demo was configured. As the demo makes progress, you'll see logs lines under <span class="inline-code">[Logs]</span>. Finally under <span class="inline-code">[Output]</span> you'll see paths to output files that the demo created:
-      </p>
-
-        <pre class="example"><code><span class="prompt">$</span> demo run <span class="highlight">djibouti</span>
-</code></pre>
-      
-        <pre class="output"><code>[Command line]
-
-/root/src/acotsp \
-    -i /root/data/djibouti/dj38.tsp \
-    --tries 1 \
-    --time 5
-          
-[Logs]
-
-starting try 1 ...
-best so far 6656, iteration: 1, time 0.00, branching factor 0.00000
-best so far 6656, iteration: 100, time 0.04, branching factor 1.00000
-best so far 6656, iteration: 200, time 0.08, branching factor 1.00000
-best so far 6656, iteration: 300, time 0.12, branching factor 1.00000
-best so far 6656, iteration: 400, time 0.16, branching factor 1.00000
-...
-best so far 6656, iteration: 12600, time 4.93, branching factor 1.00000
-best so far 6656, iteration: 12700, time 4.97, branching factor 1.00000
-
- best solution in try 1 is 6656
- best solution was found after 1 iteration(s)
- best solution was found at time 0.000592
-
-[Output]
-
-best.dj38            
-cmp.dj38
-stat.dj38            
-</code></pre>      
-      
-      <h2 class="mt-2 mb-0">Experiment with options</h2>
-
-      <h2 class="mt-2 mb-0">Use new data</h2>
-      
-      <h2 class="mt-2 mb-0">Advanced: Attach a debugger</h2>
-      
-    </div>
-  </div>
-  
-</div>
-<!-- End of doc -->
-
       <!-- end doc -->
 
     </div>

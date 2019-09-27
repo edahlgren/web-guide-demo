@@ -303,15 +303,17 @@ img {
     width: 650px;
 }
 
-.left-note-style {
+.note {
+    width: 100px;
+    
     color: #808080;
     font-style: italic;
     font-size: 12.5px;
     line-height: 18px;
 }
 
-.left-note {
-    width: 100px;
+.note-large {
+    width: 200px;
     
     color: #808080;
     font-style: italic;
@@ -463,6 +465,10 @@ table.toc a {
 
 .pl-1 {
     padding-left: 1rem;
+}
+
+.pl-4 {
+    padding-left: 4rem;
 }
 
 .pr-0\2.5 {
