@@ -61,6 +61,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.font-size-normal {
+    font-size: 14px;
+}
+
 .mb-0\.25 {
     margin-bottom: 0.25rem;
 }
@@ -74,10 +78,6 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
     color: #6e6e6e;
     margin-bottom: 1rem;
-}
-
-.short-line {
-    line-height: 18px;
 }
 
 .small-uppercase {
@@ -97,6 +97,11 @@ p {
     padding-bottom: 8px;
     margin-top: 8px;
 }
+
+.small-p {
+    width: 200px;
+}
+
 
 table {
     width: 100%;
@@ -173,6 +178,22 @@ table .option {
     justify-content: space-between;
 }
 
+.background-yellow-1 {
+    background-color: rgba(247, 247, 208, 0.5);
+}
+
+.background-yellow-2 {
+    background-color: rgba(247, 247, 208, 0.75);
+}
+
+.background-yellow-3 {
+    background-color: rgba(247, 247, 208, 1);
+}
+
+.background-white {
+    background-color: #ffffff;
+}
+
 pre {
     background-color: #f6f8fa;
     padding: 16px;
@@ -190,12 +211,10 @@ pre .prompt {
     color: rgba(106, 137, 171, 0.65);
 }
 
-pre.example .highlight {
-    color: rgba(0, 118, 161, 1);
-}
-
-pre.example .highlight-2 {
-    color: rgba(161, 0, 0, 0.75);
+pre .highlight {
+//    color: rgba(161, 0, 0, 0.75);
+    color: rgba(212, 2, 2, 0.80);
+//    color: rgba(255, 0, 0, 0.65);
 }
 
 pre.output {
@@ -203,7 +222,33 @@ pre.output {
     font-size: 10px;
     line-height: 16px;
     color: #808080;
-    margin-top: 0.5rem;
+}
+
+.no-top {
+    padding-top: 0rem;
+}
+
+.short-top {
+    padding-top: 0.5rem;
+}
+
+.short-bottom {
+    padding-bottom: 0.5rem;
+}
+
+pre.output-cli-blue {
+    background-color: #f6f8fa;
+    font-size: 12.5px;
+    line-height: 24px;
+    color: #808080;
+}
+
+pre.output-blue {
+    background-color: #f6f8fa;
+    font-size: 11px;
+//    font-size: 10px;
+    line-height: 18px;
+    color: #808080;
 }
 
 a {
@@ -303,10 +348,28 @@ img {
     width: 650px;
 }
 
-.note {
-    width: 100px;
-    
+.short-line {
+    line-height: 18px;
+}
+
+.medium-line {
+    line-height: 20px;
+}
+
+.normal-line {
+    line-height: 24px;
+}
+
+.note-style {
     color: #808080;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.note {
+    width: 120px;
+    
+//    color: #808080;
     font-style: italic;
     font-size: 12.5px;
     line-height: 18px;
@@ -327,6 +390,21 @@ img {
 
 .flex {
     display: flex;
+}
+
+.small-width {
+    width: 100px;
+    min-width: 100px;
+}
+
+.width-45 {
+    width: 45%;
+    min-width: 45%
+}
+
+.width-50 {
+    width: 50%;
+    min-width: 50%
 }
 
 /** Navigation style **/
@@ -383,12 +461,24 @@ table.toc a {
     margin-top: 0;
 }
 
+.mt-0\.25 {
+    margin-top: 0.25rem;
+}
+
 .mt-0\.5 {
     margin-top: 0.5rem;
 }
 
+.mt-0\.75 {
+    margin-top: 0.75rem;
+}
+
 .mt-1 {
     margin-top: 1rem;
+}
+
+.mt-1\.25 {
+    margin-top: 1.25rem;
 }
 
 .mt-1\.5 {
@@ -431,6 +521,10 @@ table.toc a {
     margin-left: 2rem;
 }
 
+.mr-2 {
+    margin-right: 2rem;
+}
+
 .pb-0 {
     padding-bottom: 0rem;
 }
@@ -451,8 +545,16 @@ table.toc a {
     padding-top: 0.5rem;
 }
 
+.pt-0\.75 {
+    padding-top: 0.75rem;
+}
+
 .pt-1 {
     padding-top: 1rem;
+}
+
+.pt-2 {
+    padding-top: 2rem;
 }
 
 .pl-0\.25 {
@@ -465,6 +567,14 @@ table.toc a {
 
 .pl-1 {
     padding-left: 1rem;
+}
+
+.pl-1\.5 {
+    padding-left: 1.5rem;
+}
+
+.pl-2 {
+    padding-left: 2rem;
 }
 
 .pl-4 {
@@ -495,8 +605,16 @@ table.toc a {
     padding-right: 1rem;
 }
 
+.pr-1\.25 {
+    padding-right: 1.25rem;
+}
+
 .pr-2 {
     padding-right: 2rem;
+}
+
+.pr-3 {
+    padding-right: 3rem;
 }
 
 .pr-4 {
@@ -515,6 +633,10 @@ table.toc a {
     padding-left: 6rem;
 }
 
+.p-0\.5 {
+    padding: 0.5rem;
+}
+
 /** Content font styles **/
 
 .em {
@@ -523,6 +645,10 @@ table.toc a {
 
 .bold {
     font-weight: 500;
+}
+
+.normal {
+    font-style: normal;
 }
 
 .inline-code {
@@ -540,6 +666,10 @@ table.toc a {
 
 .align-right {
     text-align: right;
+}
+
+.align-end {
+    align-items: flex-end;
 }
 
 /** Typographic labels **/

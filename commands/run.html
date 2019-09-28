@@ -38,7 +38,7 @@
                 <td></td> <!-- no label -->
                 <td>
                   <a class="section" href="/index.html#first-time-guide">
-                    First time guide
+                    How to start
                   </a>
                 </td>
               </tr>
@@ -97,7 +97,7 @@
               
               <tr class="title">
                 <td/> <!-- no label -->
-                <td>Built-in commands</td>
+                <td>Reference</td>
               </tr>
               
               <tr class="hspace-0.5"></tr>
@@ -198,17 +198,12 @@
   <div class="section mt-1">
     <div class="flex content-ml">
       
-      <div class="left-note pt-1 pr-6">
+      <div class="note normal pt-1 pr-3">
         List the built-in scripts
       </div>
 
       <div class="middle-width">
-        <pre id="example1" class="example"><code><span class="prompt">$</span> demo run
-</code></pre>
-
-        <pre class="output"><code>djibouti      Find the shortest roundtrip through Djibouti (5s)
-qatar         Find the shortest roundtrip through Qatar (5s)
-luxembourg    Find the shortest roundtrip through Luxembourg (5s)
+        <pre class="example"><code><span class="prompt">$</span> demo run
 </code></pre>
       </div>
 
@@ -218,38 +213,13 @@ luxembourg    Find the shortest roundtrip through Luxembourg (5s)
   <div class="section mt-1">
     <div class="flex content-ml">
 
-      <div class="left-note pt-1 pr-6">
+      <div class="note normal pt-1 pr-3">
         Try one of the built-in scripts
       </div>
         
       <div class="middle-width">
         <pre class="example"><code><span class="prompt">$</span> demo run <span class="highlight">djibouti</span>
 </code></pre>
-      
-        <pre class="output"><code>[Command line]
-
-/root/src/acotsp \
-    -i /root/data/djibouti/dj38.tsp \
-    --tries 1 \
-    --time 5
-          
-[Logs]
-
-starting try 1 ...
-best so far 6656, iteration: 1, time 0.00, branching factor 0.00000
-best so far 6656, iteration: 100, time 0.04, branching factor 1.00000
-best so far 6656, iteration: 200, time 0.08, branching factor 1.00000
-best so far 6656, iteration: 300, time 0.12, branching factor 1.00000
-best so far 6656, iteration: 400, time 0.16, branching factor 1.00000
-...
-best so far 6656, iteration: 12600, time 4.93, branching factor 1.00000
-best so far 6656, iteration: 12700, time 4.97, branching factor 1.00000
-
- best solution in try 1 is 6656
- best solution was found after 1 iteration(s)
- best solution was found at time 0.000592
-</code></pre>
-
       </div>
       
     </div>
@@ -258,39 +228,13 @@ best so far 6656, iteration: 12700, time 4.97, branching factor 1.00000
   <div class="section mt-1">
     <div class="flex content-ml">
 
-      <div class="left-note pt-1 pr-6">
+      <div class="note normal pt-1 pr-3">
         Run with command line options
       </div>
         
       <div class="middle-width">
           <pre class="example"><code><span class="prompt">$</span> demo run <span class="highlight">-i /root/data/djibouti/dj38.tsp --tries 1 --time 10</span>
 </code></pre>
-  
-          <pre class="output"><code>[Command line]
-
-/root/src/acotsp \
-    -i /root/data/djibouti/dj38.tsp \
-    --tries 1 \
-    --time 10
-          
-[Logs]
-
-starting try 1 ...
-best so far 6656, iteration: 1, time 0.00, branching factor 0.00000
-best so far 6656, iteration: 100, time 0.04, branching factor 1.00000
-best so far 6656, iteration: 200, time 0.08, branching factor 1.00000
-best so far 6656, iteration: 300, time 0.12, branching factor 1.00000
-best so far 6656, iteration: 400, time 0.16, branching factor 1.00000
-...
-
-best so far 6656, iteration: 25500, time 9.93, branching factor 1.00000
-best so far 6656, iteration: 25600, time 9.97, branching factor 1.00000
-
- best solution in try 1 is 6656
- best solution was found after 1 iteration(s)
- best solution was found at time 0.002275
-      
-</code></pre>
       </div>
         
     </div>
@@ -299,23 +243,12 @@ best so far 6656, iteration: 25600, time 9.97, branching factor 1.00000
   <div class="section mt-1">
     <div class="flex content-ml">
 
-      <div class="left-note pt-1 pr-6">
+      <div class="note normal pt-1 pr-3">
         Learn about a command line option
       </div>
         
       <div class="middle-width">
         <pre class="example"><code><span class="prompt">$</span> demo run <span class="highlight">help -i</span>
-</code></pre>
-  
-        <pre class="output"><code>Choose a TSPLIB formatted file to use as input to the demo (required)
-
-Included in the demo *:
-
-    Cities of Djibouti    /root/data/djibouti/dj38.tsp
-    Cities of Qatar       /root/data/qatar/qa194.tsp
-    Cities of Luxembourg  /root/data/luxembourg/lu980.tsp
-
-* = From "National Traveling Salesman Problems", University of Waterloo
 </code></pre>
       </div>
         
@@ -557,22 +490,31 @@ Included in the demo *:
 
   <div class="section">            <!-- 100% of non-nav -->
     <div class="middle-width content-ml">
-      <h2 class="mt-2">Examples</h2>
+      <h2 class="mt-2 mb-2">Examples</h2>
 
-      <p class="pb-0">Use the Elitist Ant System to solve Djibouti:</p>        
-      <pre class="example mt-0 pt-0 mb-2"><code><span class="prompt">$</span> demo run <span class="highlight-1">-i /root/data/djibouti/dj38.tsp</span> <span class="highlight">--eas</span>
+      <p class="pb-0 mt-0">
+        Use the Elitist Ant System to solve Djibouti.
+      </p>        
+
+      <pre class="output-cli-blue mt-0 mb-2"><code><span class="prompt">$</span> demo run <span class="highlight-1">-i /root/data/djibouti/dj38.tsp</span> <span class="highlight">--eas</span>
 </code></pre>
       
-      <p class="pb-0">Spend 20 seconds solving Qatar:</p>
-      <pre class="example mt-0 pt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/qatar/qa194.tsp</span> <span class="highlight">--time 20</span>
+      <p class="pb-0">
+        Spend 20 seconds solving Qatar.
+      </p>
+      <pre class="output-cli-blue mt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/qatar/qa194.tsp</span> <span class="highlight">--time 20</span>
 </code></pre>            
         
-      <p class="pb-0">Use 100 ants to solve Djibouti:</p>
-      <pre class="example mt-0 pt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/djibouti/dj38.tsp</span> <span class="highlight">--ants 100</span>
+      <p class="pb-0">
+        Use 100 ants to solve Djibouti.
+      </p>
+      <pre class="output-cli-blue mt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/djibouti/dj38.tsp</span> <span class="highlight">--ants 100</span>
 </code></pre>
 
-      <p class="pb-0">Use the Basic Ant System and allow each ant to share information with its nearest 40 neighbors to solve Luxembourg:</p>
-      <pre class="example mt-0 pt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/luxembourg/lu980.tsp</span> <span class="highlight">--as --nnants 40</span>
+      <p class="pb-0">
+        Use the Basic Ant System and allow each ant to share information with its nearest 40 neighbors to solve Luxembourg.
+      </p>
+      <pre class="output-cli-blue mt-0 mb-2"><code>$ demo run <span class="highlight-1">-i /root/data/luxembourg/lu980.tsp</span> <span class="highlight">--as --nnants 40</span>
 </code></pre>
     </div>
   </div> <!-- end of section -->
@@ -581,12 +523,11 @@ Included in the demo *:
     <div class="middle-width content-ml">
       <h2 class="mt-2">Stuck?</h2>
 
-      <div class="flex space-between mb-3">
-      
-        <table class="mt-1 toc wrap-only">
+      <div class="flex space-between mb-3">      
+        <table style="margin-left: -15px;" class="mt-1 toc wrap-only">
           <tbody>
             <tr>
-              <td><span class="label grey-blue">GS</span></td>
+              <td><span class="label light-blue">G</span></td>
               <td>
                 <a href="">
                   If you can't execute the demo
@@ -594,7 +535,7 @@ Included in the demo *:
               </td>
             </tr>
             <tr>
-              <td><span class="label grey-blue">GS</span></td>
+              <td><span class="label light-blue">G</span></td>
               <td>
                 <a href="">
                   If you don't understand a command line option
@@ -623,7 +564,7 @@ Included in the demo *:
         <table class="mt-1 legend wrap-only">
           <tbody>
             <tr>
-              <td><span class="label grey-blue">GS</span></td>
+              <td><span class="label light-blue">G</span></td>
               <td><span class="pl-0.25 pr-0.25">=</span></td>
               <td>Getting Started</td>
             </tr>
@@ -636,19 +577,17 @@ Included in the demo *:
         </table>
       </div>
       
-      <hr />
-      
     </div>
   </div>
           
   
-  <div class="section mt-3">
+  <div class="section mt-1">
     <div class="middle-width content-ml">
       
-      <table class="wrap-only">
+      <table style="margin-left: -15px;" class="wrap-only">
         <tbody>
           <tr>
-            <td><span class="label grey-blue pr-0.5">GS</span></td>
+            <td><span class="label light-blue pr-0.5">G</span></td>
             <td>If you can't execute the demo</td>
           </tr>
         </tbody>
@@ -657,10 +596,10 @@ Included in the demo *:
       <div class="ml-2 mt-2">
         <p class="pb-0">Glance over the <a href="">basic</a> examples above. Make sure you're using either a script name with <span class="inline-code">demo run</span>, or command line options, but not both at once. For example, this won't work:</p>
 
-        <pre class="example mt-0 pt-0 pb-0.5"><code><span class="prompt">$</span> demo run <span class="highlight-2">djibouti -i /root/data/djibouti/dj38.tsp</span>
+        <pre class="output-cli-blue short-bottom mt-0"><code><span class="prompt">$</span> demo run <span class="highlight-2">djibouti -i /root/data/djibouti/dj38.tsp</span>
 </code></pre>
         
-        <pre class="output mb-2"><code>Use either a script name OR command line options
+        <pre class="output-blue short-top mb-2"><code>Use either a script name OR command line options
 </code></pre>
       </div>
       
@@ -670,10 +609,10 @@ Included in the demo *:
   <div class="section mt-2">
     <div class="middle-width content-ml">
       
-      <table class="wrap-only">
+      <table style="margin-left: -15px;" class="wrap-only">
         <tbody>
           <tr>
-            <td><span class="label grey-blue pr-0.5">GS</span></td>
+            <td><span class="label light-blue pr-0.5">G</span></td>
             <td>If you don't understand a command line option</td>
           </tr>
         </tbody>
@@ -682,20 +621,14 @@ Included in the demo *:
       <div class="ml-2 mt-2">
         <p class="pb-0">Use <span class="inline-code">demo run help</span>, for example for the <span class="inline-code">--mmas</span> option:</p>
         
-        <pre class="example mt-0 pt-0 pb-0.5"><code><span class="prompt">$</span> demo run <span class="highlight">help --mmas</span>
+        <pre class="output-cli-blue short-bottom mt-0"><code><span class="prompt">$</span> demo run <span class="highlight">help --mmas</span>
 </code></pre>
-        <pre class="output mb-2"><code>Use the MAX-MIN Ant System as the artificial ant colony implementation
+        <pre class="output-blue short-top mb-2"><code>Use the MAX-MIN Ant System as the artificial ant colony implementation
 
 From Thomas Stützle and Holger H. Hoos, "MAX-MIN Ant System", Future Generation
 Computer Systems 2000
-
-Abstract:
-
-Ant System, the first Ant Colony Optimization algorithm, showed to be a viable method
-for attacking hard combinatorial optimization problems. Yet, its performance, when
-compared to more fine-tuned algorithms, was rather poor for large instances of traditional
-benchmark problems like the Traveling Salesman Problem. To show that Ant Colony Optimization
-...
+            
+...            
 </code></pre>
       </div>
 
@@ -705,7 +638,7 @@ benchmark problems like the Traveling Salesman Problem. To show that Ant Colony 
   <div class="section mt-2">
     <div class="middle-width content-ml">
       
-      <table class="wrap-only">
+      <table style="margin-left: -15px;" class="wrap-only">
         <tbody>
           <tr>
             <td><span class="label red pr-0.5">D</span></td>
@@ -724,7 +657,7 @@ benchmark problems like the Traveling Salesman Problem. To show that Ant Colony 
   <div class="section mt-2">
     <div class="middle-width content-ml">
       
-      <table class="wrap-only">
+      <table style="margin-left: -15px;" class="wrap-only">
         <tbody>
           <tr>
             <td><span class="label red pr-0.5">D</span></td>
@@ -736,16 +669,19 @@ benchmark problems like the Traveling Salesman Problem. To show that Ant Colony 
       <div class="ml-2 mt-2">
         <p class="pb-0">Copy and paste the lines under <span class="inline-code">[Command line]</span> into your shell and execute them. For example:</p>
 
-        <pre class="example mt-0 pt-0 pb-0.5"><code><span class="prompt">$</span> demo run <span class="highlight">djibouti</span>
+        <pre class="output-cli-blue short-bottom mt-0"><code><span class="prompt">$</span> demo run djibouti
 </code></pre>
-        <pre class="output mb-2"><code>[Command line]
+        <pre class="output-blue short-top mb-1"><code>[Command line]
 
-/root/src/acotsp \
+<span class="highlight">/root/src/acotsp \
     -i /root/data/djibouti/dj38.tsp \
     --tries 1 \
-    --time 5
+    --time 5</span>
 
 ...
+</code></pre>
+        
+      <pre class="short-bottom output-cli-blue mb-2"><code><span class="prompt">$</span> /root/src/acotsp -i /root/data/djibouti/dj38.tsp --tries 1 --time 5
 </code></pre>
       </div>
       
@@ -758,4 +694,5 @@ benchmark problems like the Traveling Salesman Problem. To show that Ant Colony 
 
     </div>
   </body>
+  <script type="text/javascript" src="/assets/main.js"></script>
 </html>

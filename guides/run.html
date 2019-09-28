@@ -38,7 +38,7 @@
                 <td></td> <!-- no label -->
                 <td>
                   <a class="section" href="/index.html#first-time-guide">
-                    First time guide
+                    How to start
                   </a>
                 </td>
               </tr>
@@ -97,7 +97,7 @@
               
               <tr class="title">
                 <td/> <!-- no label -->
-                <td>Built-in commands</td>
+                <td>Reference</td>
               </tr>
               
               <tr class="hspace-0.5"></tr>
@@ -182,40 +182,210 @@
       <!-- Doc content -->
 <div id="doc" class="doc">
 
+  <!-- Intro and TOC -->
+  
   <div class="section">            <!-- 100% of non-nav -->
     <div class="middle-width content-ml">
 
-      <h1 class="mb-0.25" id="title">Run the demo</h1>
-      <p>This guide is for your first time running the demo. Afterwards, the reference guide to the <a href="" class="inline-code">run</a> command likely will be more helpful.
+      <h1 class="mb-0.25" id="title">Run the demo - First time guide</h1>
 
-      <h2 class="mt-2 mb-0">What to expect</h2>
+      <div class="flex space-between mt-1.5 mb-1">      
+        <table style="margin-left: -15px;" class="toc wrap-only">
+          <tbody>
+            <tr>
+              <td></td>
+              <td>
+                <a href="">
+                  What to expect
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <a href="">
+                  Quickly try it out
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <a href="">
+                  Judge what happened
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <a href="">
+                  Experiment with options
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="label red">A</span></td>
+              <td>
+                <a href="">
+                  Use new data
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="label red">A</span></td>
+              <td>
+                <a href="">
+                  Trace and debug
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>        
+
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- What to expect -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25">What to expect</h2>
+    </div>
+  </div>
+
+  <div class="section mt-1">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml flex space-between">
+
+      <div class="width-45 pr-1">
+        <div class="note-style">Behavior</div>
+        <div class="mt-0.75 medium-line">
+          A colony of artificial ants cooperatively searches for the shortest roundtrip through all of the data points in an input file.
+        </div>
+      </div>
       
-      <h2 class="mt-2 mb-0">Quickly try it out</h2>
+      <div class="width-50 pl-1">
+        <div class="note-style">Input</div>
+        <div class="mt-0.75 medium-line">
+          A TSPLIB file containing x-y coordinates or distances between points.
+        </div>
 
-      <p>
-        First pick one of the built-in scripts. These scripts run quickly using test data included in the demo. Next to the name of each script, you'll see a description of what it does, how long it should take, and how it's configured:
-      </p>
+        <div class="mt-1 note-style">Output</div>
+        <div class="mt-0.75 medium-line">
+          Statistics about the best (shortest) tour found, statistics comparing each iteration of the colony, and internal statistics that are not labeled.
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
-      <pre class="output"><code>djibouti      Find the shortest roundtrip through Djibouti (5s)
+
+  
+  <!-- Quickly try it out -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25">Quickly try it out</h2>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        First, list the built-in scripts and choose one to run.
+      </p>      
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> demo run
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="short-top output-blue"><code><span class="highlight">djibouti</span>      Find the shortest roundtrip through Djibouti (5s)
+                  38     cities
+                  6656   optimal tour
+
 qatar         Find the shortest roundtrip through Qatar (5s)
+                  194    cities
+                  9532   optimal tour
+
 luxembourg    Find the shortest roundtrip through Luxembourg (5s)
+                  980    cities
+                  16342  optimal tour
 </code></pre>
 
-      <p>
-        Then use the <span class="inline-code">run</span> command to run the script. At the beginning under <span class="inline-code">[Command line]</span> you'll see the content of the script, showing how the demo was configured. As the demo makes progress, you'll see logs lines under <span class="inline-code">[Logs]</span>. Finally under <span class="inline-code">[Output]</span> you'll see paths to output files that the demo created:
+    </div>
+    <div class="note-large pl-4 pt-0.75">
+      Next to the name of each script in parentheses is how long the script likely takes to complete <span class="nowrap">(5s = 5 seconds)</span>
+    </div>
+  </div>
+
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Then, run the script.
       </p>
-
-        <pre class="example"><code><span class="prompt">$</span> demo run <span class="highlight">djibouti</span>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5 mb-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">        
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> demo run <span class="highlight">djibouti</span>
 </code></pre>
-      
-        <pre class="output"><code>[Command line]
+    </div>
+  </div>
+  
+
+  
+  <!-- Judge what happened -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25">Judge what happened</h2>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        The script should print something that looks like this.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-blue"><code><span class="highlight">[Command line]</span>
 
 /root/src/acotsp \
     -i /root/data/djibouti/dj38.tsp \
     --tries 1 \
     --time 5
-          
-[Logs]
+
+</code></pre>      
+    </div>
+    <div class="note-large pl-4 pt-0.75">
+      What was executed
+    </div>
+  </div>
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">        
+      <pre class="short-top short-bottom output-blue"><code><span class="highlight">[Logs]</span>
 
 starting try 1 ...
 best so far 6656, iteration: 1, time 0.00, branching factor 0.00000
@@ -231,22 +401,375 @@ best so far 6656, iteration: 12700, time 4.97, branching factor 1.00000
  best solution was found after 1 iteration(s)
  best solution was found at time 0.000592
 
-[Output]
-
-best.dj38            
-cmp.dj38
-stat.dj38            
 </code></pre>      
-      
-      <h2 class="mt-2 mb-0">Experiment with options</h2>
-
-      <h2 class="mt-2 mb-0">Use new data</h2>
-      
-      <h2 class="mt-2 mb-0">Advanced: Attach a debugger</h2>
-      
+    </div>
+    <div class="note-large pl-4">
+      Progress logs
     </div>
   </div>
   
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">        
+      <pre class="short-top output-blue"><code><span class="highlight">[Output files]</span>
+
+best.dj38      Statistics about the best (shortest) tour found            
+cmp.dj38       Statistics comparing each of the tries
+stat.dj38      Internal statistics, see the source code for detail
+</code></pre>      
+    </div>
+    <div class="note-large pl-4">
+      Files that were created
+    </div>
+  </div>
+    
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Find your best result.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> cat best.dj38 | grep "Best try"
+</code></pre>
+    </div>
+  </div>
+
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="no-top output-blue"><code><span class="highlight">Best try: 6656</span>            Worst try: 6656
+</code></pre>
+
+    </div>
+  </div>
+  
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Then, see if it's close to the optimal result.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> demo run
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section mb-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="short-top output-blue"><code><span class="highlight">djibouti</span>      Find the shortest roundtrip through Djibouti (5s)
+                  38     cities
+                  <span class="highlight">6656   optimal tour</span>
+
+...
+</code></pre>          
+    </div>
+    <div class="note-large pl-4">
+      The demo solves the traveling salesman problem <span class="em">heuristically</span>, so you may not always get the optimal result.
+    </div>
+  </div>
+
+
+  
+  <!-- Experiment with options -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25">Experiment with options</h2>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        First, find command line options in the script output.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-blue"><code>[Command line]
+
+/root/src/acotsp \
+    <span class="highlight">-i</span> /root/data/djibouti/dj38.tsp \
+    <span class="highlight">--tries</span> 1 \
+    <span class="highlight">--time</span> 5
+</code></pre>
+    </div>
+    <div class="note-large pl-4 mt-1">
+      Find all of the command line options in the <a href="" class="inline-code">run</a> reference.
+    </div>
+  </div>
+
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Then, print a description to learn how they work.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-cli-blue"><code><span class="prompt">$</span> demo run <span class="highlight">help -i</span>
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="short-top output-blue"><code>Choose a TSPLIB formatted file to use as input to the demo (required)
+
+Included in the demo *:
+
+    Cities of Djibouti    /root/data/djibouti/dj38.tsp
+    Cities of Qatar       /root/data/qatar/qa194.tsp
+    Cities of Luxembourg  /root/data/luxembourg/lu980.tsp
+
+* = From "National Traveling Salesman Problems", University of Waterloo
+</code></pre>
+    </div>
+  </div>
+      
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Finally, use the options with <span class="inline-code">demo run</span>, changing ones that interest you.
+      </p>
+    </div>
+  </div>
+
+  <div class="section mt-1.5 mb-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-cli-blue"><code><span class="prompt">$</span> demo run <span class="highlight">-i</span> /root/data/qatar/qa194.tsp <span class="highlight">--tries</span> 1 <span class="highlight">--time</span> 10
+</code></pre>
+    </div>
+  </div>
+
+
+  
+  <!-- Use new data -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25"><span class="label red">A</span> Use new data</h2>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        You can use any dataset that can be represented as a distance-based graph. For example, the Van Gogh dataset from Robert Bosch traces out a portrait of Van Gogh the artist when the optimal tour is found.
+      </p>
+    </div>
+  </div>
+
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <img class="grid-img" src="/assets/images/vangogh120K.png" />
+    </div>
+    <div class="note-large pl-4 mt-1">
+      See <a href="">TSP Art Instances</a> for more TSPLIB files like this
+    </div>
+  </div>
+
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        This is a snippet of the Van Gogh dataset in TSPLIB format. It has 120,000 x-y coordinates.
+      </p> 
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-blue"><code>NAME: vangogh120K
+COMMENT: TSP art (Bosch)
+TYPE: TSP
+DIMENSION: 120000
+EDGE_WEIGHT_TYPE: EUC_2D
+NODE_COORD_SECTION
+<span class="highlight">1</span>  8699 17181
+<span class="highlight">2</span>  1579  8892
+<span class="highlight">3</span> 13237  7561
+<span class="highlight">4</span>  5443  6647
+<span class="highlight">5</span> 13534 15569
+<span class="highlight">6</span>  4526 12184
+<span class="highlight">7</span>  3249 11758
+...
+<span class="highlight">120000</span>  8165  5660
+EOF
+</code></pre>
+
+    </div>
+  </div>
+  
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Notably, it has a "specification" section that describes the dataset.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-blue"><code>NAME: vangogh120K
+COMMENT: TSP art (Bosch)
+TYPE: TSP
+DIMENSION: 120000
+EDGE_WEIGHT_TYPE: EUC_2D
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        And it has a "data" section that contains the dataset.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5 mb-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="short-bottom output-blue"><code>NODE_CORD_SECTION
+1  8699 17181
+2  1579  8892
+3 13237  7561
+4  5443  6647
+5 13534 15569
+6  4526 12184
+7  3249 11758
+...
+120000  8165  5660
+EOF
+</code></pre>
+   </div>
+    
+    <div class="note-large pl-4">
+      Use <a href="">this reference</a> to the TSPLIB file format to create your own input files.
+    </div>
+  </div>
+
+
+  
+  <!-- Trace and debug -->
+
+  
+  
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25"><span class="label red">A</span> Trace and debug</h2>      
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        First, find <span class="inline-code normal">[Command line]</span> in the lines printed by the script into your shell.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="output-blue"><code>[Command line]
+
+<span class="highlight">/root/src/acotsp \
+    -i /root/data/djibouti/dj38.tsp \
+    --tries 1 \
+    --time 5</span>
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Copy and paste them into your shell and execute them. Do this to make sure that running the demo manually works before adding extra tools.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> /root/src/acotsp -i /root/data/djibouti/dj38.tsp --tries 1 --time 5
+</code></pre>
+    </div>
+  </div>
+  
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Then, install a tracing or debugging program. For example, if you're interested in seeing which files the demo uses, install <span class="inline-code">strace</span>.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> apt-get install <span class="highlight">strace</span>
+</pre></code>          
+    </div>
+  </div>
+
+  <div class="section mt-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Finally, wrap the commands you tested in your tracing or debugging program.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">      
+      <pre class="output-cli-blue"><code><span class="prompt">$</span> <span class="highlight">strace -f -e open</span> \
+/root/src/acotsp -i /root/data/djibouti/dj38.tsp --tries 1 --time 5
+</pre></code>          
+    </div>
+    <div class="note-large pl-4 pt-0.75">
+      Warning: using tracing and debugging tools can cause the demo to run much slower.
+    </div>
+  </div>
+  
+  <div class="section mb-2">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <pre class="short-top output-blue"><code>open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+open("/root/data/djibouti/dj38.tsp", O_RDONLY) = 3
+open("best.dj38", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4
+open("cmp.dj38", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 5
+open("stat.dj38", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 6
+</code></pre>
+    </div>
+  </div>
+
+  <div class="section">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <h2 class="mt-2.5 mb-0.25" id="stuck">Stuck?</h2>
+    </div>
+  </div>
+
+  <div class="section mt-1.5">            <!-- 100% of non-nav -->
+    <div class="middle-width content-ml">
+      <p class="mt-0 mb-0 pb-0 note-style">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div>
+  </div>
+    
 </div>
 <!-- End of doc -->
 
@@ -254,4 +777,5 @@ stat.dj38
 
     </div>
   </body>
+  <script type="text/javascript" src="/assets/main.js"></script>
 </html>
